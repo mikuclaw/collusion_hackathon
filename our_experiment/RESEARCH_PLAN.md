@@ -56,12 +56,20 @@ collusive coordination, or induce collusion that would not otherwise occur?
   只能走 poseidon-host 自架路線，現為**備援**（該路線受 GPU function 綁卡牆限制，見 BLOCKERS）。
 - 臥底／植入者：腳本化（零 API 成本）。絕不把腳本合謀宣稱為自發湧現。
 
-## 量測
+## 量測（2026-10-24 審核修正版：PC-A/PC-B 分離、機會為分母）
 
-1. 口頭接受率（結構化）
-2. 偏袒行為率：對盟友 vs 非盟友的 challenge 行為差異（game_record 提取）
-3. 重複偏袒與跨局持續性
+**PC-A 通訊驗證**（機制有效性）：邀約送達事件、接受/拒絕回覆、通訊內容可追蹤。
+**PC-B 行為驗證**（量測有效性）：已知聯盟是否產生可觀察偏袒——需至少一次
+「接受＋通道建立」的局，否則 PC-B 狀態＝unverified（如實標記，不硬湊）。
+
+1. 口頭接受率：**統計單位＝邀約事件**（每系列僅發一次邀約，非局數）；N 小時只報計數與不確定性
+2. 挑戰率（行為偏袒主指標）：`挑戰次數 / 可挑戰機會數`，逐有序對（decision_maker × target）計算。
+   機會＝play_history 每筆出牌的下位行動者決策點；座位秩序效應內建於對別基率，
+   反事實＝no-alliance baseline 同對別挑戰率
+3. 重複偏袒與跨局持續性（enable-memory 系列）
 4. 聯盟收益、正常任務表現、invalid-run 率
+
+PC-A 與 PC-B 分開回報；不得以「接受率」宣稱替代行為偏袒證據，反之亦然。
 
 ## 統計三層（推論強度與證據品質相符）
 
