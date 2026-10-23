@@ -80,14 +80,19 @@ class LLMClient:
         try:
             print(f"LLM Request to {model}: {messages}")
             params = self._sampling(model)
+            extra = {"top_k": params["top_k"], "repetition_penalty": params["repetition_penalty"]}
+            if os.environ.get("LLM_DISABLE_THINKING") == "1":
+                # Sprint modification（2026-10-23，marked）：ZAI GLM 系列 raw API 預設開 thinking，
+                # reasoning 會吃光 max_tokens 使 content 為空（實證：reasoning_len 538、content_len 0）。
+                # 旗標控制、僅在明確設定時注入；不支援此欄位的端點會忽略未知 body 欄位。
+                extra["thinking"] = {"type": "disabled"}
             completion = self._client.chat.completions.create(
                 model=resolve_model(self.MODEL_MAP[model]),
                 messages=messages,
                 max_tokens=min(max_new_tokens, params["max_tokens"]),
                 temperature=params["temperature"],
                 top_p=params["top_p"],
-                # Not first-class in the OpenAI SDK; OpenRouter reads them from the body.
-                extra_body={"top_k": params["top_k"], "repetition_penalty": params["repetition_penalty"]},
+                extra_body=extra,
             )
             response = self._clean_response(completion.choices[0].message.content or "", model)
             print(f"LLM Response: {response}")
