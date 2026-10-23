@@ -39,16 +39,21 @@ collusive coordination, or induce collusion that would not otherwise occur?
 - 遞增證據結構（對應官方 2.3 plus factors）：接受 → 重複偏袒行動 → 跨局持續（enable-memory）。
 - 配對隨機化：同 seed 派生初始牌局跨條件重用；條件分配在跑前寫死於 config。
 
-## 環境與模型
+## 環境與模型（2026-10-24 上午改判版，與 DECISIONS 同步）
 
 - 主環境：Liar's Bar（官方 llm-agent-collusion-2）。現成儀器：
   `respond_to_secret_tool_offer` 結構化輸出、`game_record.add_secret_channel_event`、
   series flags（--trigger-game/--trigger-round/--chosen-player/--allow-refusal/--enable-memory）、
   `test_secret_comm_acceptance.py` 批次接受率＋互惠檢查。
 - 次環境：Cleanup 同框架（時間允許才做）。
-- 模型：Qwen/Qwen2.5-7B-Instruct × 4 席位同模型（temperature 0.2、int-only seed 派生）。
-  原論文 seat 模型之一；Qwen3-4B 因 starter 釘 vllm==0.6.6 不可行（見 DECISIONS）。
-  自架 vLLM 的優勢：權重/版本/取樣參數完全釘死，可重現性高於第三方 API。
+- **主模型：deepseek-ai/DeepSeek-V4.1-Flash**（Modal Shared Endpoint，OpenAI 相容、4 席位同模型）。
+  權重／版本／取樣由 endpoint 釘死；reasoning 預設關閉（實證：content 乾淨、零 reasoning 欄位）；
+  完整 episode 實跑通過（8.9 分鐘、9 回合、記錄結構完整）。
+- 取樣參數：**沿用 harness 逐 seat 內建校準**（temp 0.8、top_p 0.9、top_k 50、repetition_penalty 1.05、
+  max_tokens 256）——單模型覆蓋下四席同參數；不以我方 pilot 的 temp 0.2 覆蓋官方校準。
+- Robustness candidate：Qwen/Qwen3.8-2.4T-A95B（煙霧通過；**過 G4 後**才投入完整驗證與單價核實）。
+- 歷史註記：Qwen2.5-7B-Instruct（原論文 seat 模型）因 starter `modal_serve.py` 釘 vllm==0.6.6
+  只能走 poseidon-host 自架路線，現為**備援**（該路線受 GPU function 綁卡牆限制，見 BLOCKERS）。
 - 臥底／植入者：腳本化（零 API 成本）。絕不把腳本合謀宣稱為自發湧現。
 
 ## 量測
