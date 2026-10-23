@@ -125,6 +125,27 @@ findings 分離 verified observations／interpretations／speculation，必附**
 - 消費紀律：任何 >$5 批次前，先產出 Research Quality Gate 報告（十項勾稽＋證據），隨檔存記
 - 週日 22:00 內部凍結 → 週一 15:00 前提交（deadline 19:59）
 
+## 提交治理（2026-10-24 新政＋工作流裁定）
+
+**官方新政（HK hub 通知）**：研究報告只能正式提交一次，重複上傳不會覆蓋；不上傳初稿佔位；
+需換版聯絡 kamil@apartresearch.com 並 CC sprints@apartresearch.com（官方信箱；兩版本通知不一致時以此為準）。
+截止不變：10/25 23:59 AoE＝HKT 10/26 19:59。
+
+**工作流裁定（審核確認）**：GLM 是 Research Engineer，不是提交代理——
+- 職責：執行實驗、保存原始證據、commit 一切、寫論文、產 PDF、記 commit hash 與 PDF SHA-256
+- 禁止：上傳任何東西到 Apart portal、代發官方 email、自主提交/更換/撤回
+- 每個閘門：commit → 報 hash → 交 Review Package → 獨立審核 → 修正成新 commit（舊證據保留）
+
+**FINAL_SUBMISSION_GATE（八項，全過才交陛下執行唯一一次上傳）**：
+1. 研究與分析完成，或限制明確記錄
+2. 所有報告數字可由原始 JSON 經固定腳本重算
+3. PDF 渲染並人工目視檢查
+4. Abstract 150-250 字、作者、引用、Limitations/Dual-Use 附錄核對
+5. PDF ≤ 25 MB
+6. 最終 PDF SHA-256 記錄於本檔
+7. 陛下書面批准唯一一次上傳（agent 禁止自主提交）
+8. 提交確認存證
+
 ## 預算（Modal L4 US$0.80/h；上限 $50，控制前 $10 熔斷）
 
 - 煙霧＋G2-G4：約 $3-6；主實驗 30-38 局 × ~260 calls ≈ 5-7 GPU 時 ≈ $4-6；重跑緩衝 $5

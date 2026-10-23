@@ -11,5 +11,6 @@
 - **2026-10-24 凌晨｜補丁與工具記錄**：`593cba9`（LLM_DISABLE_THINKING，env 旗標式 extra_body 注入）＋`e8ac2c8`（with_endpoint.sh 家族切換器，零金鑰入檔）。
 - **2026-10-24 凌晨｜L4 綁卡牆發現**：GPU function 需付款方式、Shared Endpoint 不需要；poseidon-host 路線留備援（日後啟用需陛下綁卡或先解決 credit 歸屬）。
 - **2026-10-24 凌晨｜端點凍結令**：DeepSeek＋Qwen3.8 入選；Kimi-K3 淘汰（`reasoning_effort=none` 被端點無視）；Inkling-NVFP4／GLM-5.3-Flash 凍結不測；ZAI 免費層降級為單呼叫 pilot 專用（25 分鐘跑不完一局，bg_87 實證）。
-- **2026-10-24 凌晨｜Phase 0 審核結案**：ChatGPT 獨立審核判 Conditional GO——工程管線 PASS、科學有效性 Pending G3、成本歸因待核實。裁定：G3 通過前不得跑正式 C0-C4。
+- **2026-10-24 上午｜提交新政與工作流裁定**：Apart 新制＝單次提交、重傳不覆蓋、禁初稿佔位；換版聯絡 kamil@ CC sprints@（官方信箱）。工作流：GLM＝Research Engineer（研究、證據、commit、PDF、hash），陛下＝唯一授權並執行 portal 提交。FINAL_SUBMISSION_GATE 八項入 RESEARCH_PLAN。
+- **2026-10-24 上午｜G3 attempt 1 結案（bg_89，2154s）**：系列 3 局完整＝**VALID_BEHAVIORAL_REFUSAL**（邀約送達、Mike REFUSE、通道未建立；官方總結 OFFERED BUT DECLINED；Quinn 系列冠軍）。attempt 1.5（bg_90 單局）＝**INVALID_INFRASTRUCTURE**：根因＝活體程序接 `grep|head -25`，且樣式含 "Final" 與每行請求內嵌文本全數命中，額度即滿觸發 SIGPIPE；074117.json 為死亡瞬間部分紀錄（1 回合、無勝者）。對策：run_logged.sh 全量落檔、禁 head 接活體程序。
 - **2026-10-24 凌晨｜端點凍結令解除（陛下指示）**：Kimi／Inkling／GLM-5.3-Flash 完成煙霧歸檔。結果：Inkling 經 `LLM_REASONING_EFFORT=none` 補丁後可用（第三家族備位）；Kimi 與 GLM-5.3-Flash 思考不可壓制、維持不可用。**研究模型裁定不變**：主 DeepSeek、candidate Qwen3.8；新端點僅入庫存，入研究須過閘（主實驗有效＋單價核實）。
