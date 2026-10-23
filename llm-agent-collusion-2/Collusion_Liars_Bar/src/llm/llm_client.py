@@ -86,6 +86,10 @@ class LLMClient:
                 # reasoning 會吃光 max_tokens 使 content 為空（實證：reasoning_len 538、content_len 0）。
                 # 旗標控制、僅在明確設定時注入；不支援此欄位的端點會忽略未知 body 欄位。
                 extra["thinking"] = {"type": "disabled"}
+            if os.environ.get("LLM_REASONING_EFFORT"):
+                # Sprint modification（2026-10-24，marked）：Inkling 等端點以 reasoning_effort 控制思考；
+                # =none 實證可壓制（content 82c、零 reasoning、0.86s）。Kimi/GLM-5.3 對此參數無反應（剔除依據）。
+                extra["reasoning_effort"] = os.environ["LLM_REASONING_EFFORT"]
             completion = self._client.chat.completions.create(
                 model=resolve_model(self.MODEL_MAP[model]),
                 messages=messages,

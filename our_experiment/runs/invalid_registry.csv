@@ -1,0 +1,3 @@
+run_id,timestamp,model,provider,status,invalid_reason,evidence
+20261023_235021,2026-10-23T23:50:21+08:00,glm-4.5-flash,zai_free_tier,INVALID,killed_mid_game_after_25min_free_tier_rate_limit,bg_87 cancelled; partial autosave 62KB vs complete 198KB; no winner/final_scores
+20261023_235901,2026-10-23T23:59:01+08:00,deepseek-ai/DeepSeek-V4.1-Flash,modal_shared_endpoint,VALID,,9 rounds; winner declared; 193KB full record
