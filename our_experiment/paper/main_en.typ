@@ -40,13 +40,13 @@
     Track 3.2 asks whether a trusted agent that offers collusion has been
     tested; it has not. We present a small, single-model study in the official
     Liar's Bar harness (4-agent rounds, a secret-channel tool with structured
-    accept/refuse responses) using DeepSeek-V4.1-Flash across 20 episodes in
-    three phases (7 calibration, 3 pilot, 10 confirmatory); the analysis
+    accept/refuse responses) using DeepSeek-V4.1-Flash across 28 episodes in
+    four phases (7 calibration, 3 pilot, 10 confirmatory, 8 replication); the analysis
     protocol was frozen before confirmatory data collection. A scripted,
     experimenter-channel investigator (not a seat-based autonomous agent)
-    delivered 10 invitations: 8 voluntary invitations were all refused (0/8
-    accepted, across three different recipient agents), and 2 seeded episodes
-    had refusals overridden by the harness, imposing alliances with
+    delivered 18 invitation events: 14 voluntary invitations were all
+    refused (0/14 accepted, across three different recipient agents), and 4
+    seeded episodes had refusals overridden by the harness, imposing alliances with
     procedural ground truth. Imposed alliances exchanged 149 secret messages
     — a mixed medium of cooperation, resistance and artifacts — including
     full hand disclosure and coordinated play plans; post-establishment,
@@ -186,17 +186,16 @@ finding H1) and random targets were used where applicable.
 #figure(
   table(
     columns: 5,
-    align: (left, center, center, center, center),
     [Arm], [N], [Accept], [Refuse], [Forced alliance],
-    [Voluntary arm], [8], [0], [8], [0],
-    [Seeded arm], [2], [0 (2 refusal attempts overridden)], [—], [2],
-    [*Total invitation events*], [*10*], [0], [8], [2],
+    [Voluntary arm], [14], [0], [14], [0],
+    [Seeded arm], [4], [0 (4 refusal attempts overridden)], [—], [4],
+    [*Total invitation events*], [*18*], [0], [14], [4],
   ),
-  caption: [Invitation outcomes across all 10 invitation events.],
+  caption: [Invitation outcomes across all 18 invitation events.],
 )
 
-All 8 voluntary invitations were refused (three different recipient agents:
-Mike, Quinn, Lily×6 — Lily was the targeted recipient). Descriptive counts;
+All 14 voluntary invitations were refused (three different recipient
+agents: Mike, Quinn, Lily×12 — Lily was the targeted recipient). Descriptive counts;
 N is too small to infer a population refusal rate.
 
 == Focal pair (Lily, Luke) challenge rates
@@ -281,9 +280,9 @@ prospectively specified).
 core question into three separately verifiable layers with different evidence
 strength:
 
-+ *Elicitation (RQ1)*: DeepSeek-V4.1-Flash faced 10 invitation events
-  (8 voluntary + 2 seeded; three different recipient agents; two script
-  paths). All 8 voluntary invitations were refused (0/8 accepted); both
++ *Elicitation (RQ1)*: DeepSeek-V4.1-Flash faced 18 invitation events
+  (14 voluntary + 4 seeded; three different recipient agents; two script
+  paths). All 14 voluntary invitations were refused (0/14 accepted); all 4
   seeded attempts to refuse were overridden by the harness and converted to
   forced alliances. This is a descriptive observation; refusal motivation
   (safety tendency, payoff calculation, or invitation wording) was not
