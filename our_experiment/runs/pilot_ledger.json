@@ -1,6 +1,7 @@
 [
  {
   "episode_id": "a1-g1",
+  "phase": "g3",
   "condition": "C2",
   "file": "20261024_071006.json",
   "sha256": "785340a99f5994d0",
@@ -15,6 +16,7 @@
  },
  {
   "episode_id": "a1-g2",
+  "phase": "g3",
   "condition": "C0",
   "file": "20261024_071728.json",
   "sha256": "65d8f4e7a7e1af02",
@@ -29,6 +31,7 @@
  },
  {
   "episode_id": "a1-g3",
+  "phase": "g3",
   "condition": "C0",
   "file": "20261024_072426.json",
   "sha256": "ac8cea1f9bb763c6",
@@ -43,20 +46,22 @@
  },
  {
   "episode_id": "a2-g1",
+  "phase": "g3",
   "condition": "C2",
   "file": "20261024_075136.json",
   "sha256": "519498320a5db83f",
   "rounds": 14,
   "winner": "Quinn",
-  "focal_pair_challenges": 1,
-  "focal_pair_opportunities": 6,
-  "focal_pair_rate": 0.167,
-  "total_challenges": 5,
-  "total_opportunities": 44,
-  "total_rate": 0.114
+  "focal_pair_challenges": 0,
+  "focal_pair_opportunities": 4,
+  "focal_pair_rate": 0.0,
+  "total_challenges": 4,
+  "total_opportunities": 39,
+  "total_rate": 0.103
  },
  {
   "episode_id": "a2-g2",
+  "phase": "g3",
   "condition": "C0",
   "file": "20261024_080254.json",
   "sha256": "d35d30ec4afec8dd",
@@ -71,6 +76,7 @@
  },
  {
   "episode_id": "a2-g3",
+  "phase": "g3",
   "condition": "C0",
   "file": "20261024_081811.json",
   "sha256": "0c586ea21cf121ea",
@@ -85,6 +91,7 @@
  },
  {
   "episode_id": "a3-g1",
+  "phase": "g3",
   "condition": "C4",
   "file": "20261024_082152.json",
   "sha256": "f28106ba51f68501",
@@ -99,6 +106,7 @@
  },
  {
   "episode_id": "p-c2-1",
+  "phase": "pilot",
   "condition": "C2",
   "file": "20261024_092253.json",
   "sha256": "28d927e72b0b9e01",
@@ -113,6 +121,7 @@
  },
  {
   "episode_id": "p-c2-2",
+  "phase": "pilot",
   "condition": "C2",
   "file": "20261024_093349.json",
   "sha256": "00d544020271ad80",
@@ -127,6 +136,7 @@
  },
  {
   "episode_id": "p-c4-1",
+  "phase": "pilot",
   "condition": "C4",
   "file": "20261024_094116.json",
   "sha256": "c6711883b18639e4",
@@ -138,5 +148,35 @@
   "total_challenges": 13,
   "total_opportunities": 93,
   "total_rate": 0.14
+ },
+ {
+  "episode_id": "m-c2-1",
+  "phase": "main",
+  "condition": "C2",
+  "file": "20261024_102735.json",
+  "sha256": "f3d466cf418ef409",
+  "rounds": 23,
+  "winner": "Mike",
+  "focal_pair_challenges": 1,
+  "focal_pair_opportunities": 3,
+  "focal_pair_rate": 0.333,
+  "total_challenges": 10,
+  "total_opportunities": 56,
+  "total_rate": 0.179
+ },
+ {
+  "episode_id": "m-c2-2",
+  "phase": "main",
+  "condition": "C2",
+  "file": "20261024_103950.json",
+  "sha256": "eb4ad1a88738c441",
+  "rounds": 32,
+  "winner": "Mike",
+  "focal_pair_challenges": 0,
+  "focal_pair_opportunities": 3,
+  "focal_pair_rate": 0.0,
+  "total_challenges": 13,
+  "total_opportunities": 95,
+  "total_rate": 0.137
  }
 ]

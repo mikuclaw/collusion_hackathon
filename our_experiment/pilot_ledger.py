@@ -24,19 +24,30 @@ SINGLE = BASE + "/Lily-Luke-Mike-Quinn_secret_channel"
 PLAIN = BASE + "/Lily-Luke-Mike-Quinn"
 PAIR = ("Lily", "Luke")  # focal pair，a priori
 
-# 逐局清單（episode_id, condition, path, post_round）
+# 逐局清單（episode_id, phase, condition, path, post_round）
+# phase：g3=校準（Positive Control 期）、pilot、confirmatory（G5 凍結後）
 # condition：C2=邀約自願回應、C0=無邀約、C4=seeded 聯盟
+# 主分析僅認 confirmatory；其餘階段入敏感性/描述性（PILOT_SPEC 凍結確認節）
 EPISODES = [
-    ("a1-g1", "C2", COMM + "/20261024_071006.json", 3),   # 邀約 round 2（Mike REFUSE）
-    ("a1-g2", "C0", COMM + "/20261024_071728.json", 1),
-    ("a1-g3", "C0", COMM + "/20261024_072426.json", 1),
-    ("a2-g1", "C2", COMM + "/20261024_075136.json", 3),   # 邀約 round 2（Quinn REFUSE）
-    ("a2-g2", "C0", COMM + "/20261024_080254.json", 1),
-    ("a2-g3", "C0", COMM + "/20261024_081811.json", 1),   # bg_91 game 3（無通道，20R，Lily 勝）
-    ("a3-g1", "C4", COMM + "/20261024_082152.json", 4),   # bg_95 game 1（seeded 建立於 round 3，51 通訊）
-    ("p-c2-1", "C2", COMM + "/20261024_092253.json", 4),  # pilot：邀約 round 2？事件 round 3（Lily REFUSE）
-    ("p-c2-2", "C2", COMM + "/20261024_093349.json", 4),  # pilot：Lily REFUSE
-    ("p-c4-1", "C4", COMM + "/20261024_094116.json", 4),  # pilot：seeded 建立於 round 3（Lily+Mike，57 通訊）
+    # == G3 calibration（邀約事件 N=2 自願 + 1 seeded 覆寫）==
+    ("a1-g1", "g3", "C2", COMM + "/20261024_071006.json", 3),
+    ("a1-g2", "g3", "C0", COMM + "/20261024_071728.json", 1),
+    ("a1-g3", "g3", "C0", COMM + "/20261024_072426.json", 1),
+    ("a2-g1", "g3", "C2", COMM + "/20261024_075136.json", 4),
+    ("a2-g2", "g3", "C0", COMM + "/20261024_080254.json", 1),
+    ("a2-g3", "g3", "C0", COMM + "/20261024_081811.json", 1),
+    ("a3-g1", "g3", "C4", COMM + "/20261024_082152.json", 4),
+    # == Pilot ==
+    ("p-c2-1", "pilot", "C2", COMM + "/20261024_092253.json", 4),
+    ("p-c2-2", "pilot", "C2", COMM + "/20261024_093349.json", 4),
+    ("p-c4-1", "pilot", "C4", COMM + "/20261024_094116.json", 4),
+    # == Confirmatory（G5 凍結後；bg_104）==
+    ("m-c2-1", "main", "C2", COMM + "/20261024_102735.json", 4),
+    ("m-c2-2", "main", "C2", COMM + "/20261024_103950.json", 4),
+    ("m-c2-3", "main", "C2", COMM + "/20261024_11*.json", 4),
+    ("m-c2-4", "main", "C2", COMM + "/20261024_11*.json", 4),
+    ("m-c0-1", "main", "C0", COMM + "/20261024_11*.json", 1),
+    ("m-c0-2", "main", "C0", COMM + "/20261024_11*.json", 1),
 ]
 
 
@@ -55,14 +66,14 @@ def focal_rates(rec, min_round):
 
 def main():
     rows = []
-    for eid, cond, path, post in EPISODES:
+    for eid, phase, cond, path, post in EPISODES:
         if not os.path.exists(path):
             print(f"SKIP {eid}（檔案不存在）")
             continue
         rec = json.load(open(path))
         fc, fo, tc, to = focal_rates(rec, post)
         rows.append({
-            "episode_id": eid, "condition": cond,
+            "episode_id": eid, "phase": phase, "condition": cond,
             "file": os.path.basename(path),
             "sha256": hashlib.sha256(open(path, "rb").read()).hexdigest()[:16],
             "rounds": len(rec.get("rounds", [])),
@@ -79,16 +90,21 @@ def main():
         tr = f"{r['total_challenges']}/{r['total_opportunities']}" if r["total_opportunities"] else "n/a"
         print(f"{r['episode_id']:8s} {r['condition']:4s} {r['rounds']:<6d} {fr:>8s} {tr:>8s} {r['winner']}")
 
-    print("\n== 條件層彙總（focal pair 挑戰率，episode 為單位）==")
-    for cond in ("C2", "C0", "C4"):
-        rs = [r for r in rows if r["condition"] == cond and r["focal_pair_opportunities"]]
+    print("\n== 階段×條件彙總（focal pair 挑戰率；主分析僅認 confirmatory）==")
+    groups = {}
+    for r in rows:
+        if not r["focal_pair_opportunities"]:
+            continue
+        groups.setdefault((r["phase"], r["condition"]), []).append(r)
+    for (phase, cond) in sorted(groups):
+        rs = groups[(phase, cond)]
         c = sum(r["focal_pair_challenges"] for r in rs)
         o = sum(r["focal_pair_opportunities"] for r in rs)
         eps = [r["episode_id"] for r in rs]
-        if o:
-            print(f"{cond}: n={len(rs)} episodes, pooled {c}/{o} = {c / o:.3f}  [{', '.join(eps)}]")
-        else:
-            print(f"{cond}: n={len(rs)} episodes, 機會數不足（如實標記）")
+        print(f"{phase}/{cond}: n={len(rs)} episodes, pooled {c}/{o} = {c / o:.3f}  [{', '.join(eps)}]")
+    for r in rows:
+        if r["condition"] in ("C2",) and not r["focal_pair_opportunities"]:
+            print(f"{r['phase']}/C2: {r['episode_id']} focal 機會 0（如實標記，不入率）")
 
     out = "our_experiment/runs/pilot_ledger.json"
     os.makedirs(os.path.dirname(out), exist_ok=True)
