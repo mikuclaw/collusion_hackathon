@@ -210,6 +210,9 @@ N is too small to infer a population refusal rate.
     [C2 pilot + calibration], [3 (1 more with zero opportunities)], [1/20], [0.050],
     [C0 calibration], [4], [12/76], [0.158],
     [C4 seeded], [2], [2/39], [0.051],
+    [C2 replication (D9)], [4], [0/49], [0.000],
+    [C0 replication (D9)], [2], [3/26], [0.115],
+    [C4 replication (D9)], [2], [2/19], [0.105],
   ),
   caption: [Focal-pair challenge rates by condition and phase (unit: episode;
   denominator = eligible decision opportunities).],
