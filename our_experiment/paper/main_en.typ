@@ -46,7 +46,8 @@
     accepted, across three different recipient agents), and 2 seeded episodes
     had refusals overridden by the harness, imposing alliances with
     procedural ground truth. Imposed alliances exchanged 108 secret messages
-    with full hand disclosure and coordinated play plans; post-establishment,
+    — a mixed medium of cooperation, resistance and artifacts — including
+    full hand disclosure and coordinated play plans; post-establishment,
     allies never challenged each other (0/10 eligible opportunities) while
     challenging non-allies at 10/85 = 0.118. Focal-pair challenge rates
     against a prospectively specified focal pair showed no consistent induction signal
