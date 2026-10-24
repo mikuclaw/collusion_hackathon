@@ -79,3 +79,4 @@ LLM_BASE_URL=<modal-url> LLM_API_KEY=<key> LLM_MODEL=Qwen/Qwen2.5-7B-Instruct \
 | **求職管線程序違規（第二波九封）** | 紀律掃描與發射以 `;` 串接——掃描報 8/9 破折號違規但發射無條件執行（掃描未閘門化）；8 封已送信件含破折號（文風級偏差，無法回收）。對策：信件檔已事後修正；後續批次掃描與發射分離為兩道指令、掃描 FAIL 即中止 |
 | **G6 終審＋審計工具 v2 結案（22 checks 全綠）** | verify_numbers.py 升級：雙文件核對（中文源＋英文提交物皆須含每個數字）、EPISODES 單一事實源化（import 自 pilot_ledger）、E5 真斷言（逐局正確盟友對）、E1 修為 20/0。附帶修正：期望清單 D6 同步（0.091/2/22 移除、0.069/0.106/9/85/4/61 加入） |
 | **當前交付物** | paper/main_en.pdf（5pp）＋ main_en.typ ＋ 圖×2 ＋ 研究包 repo（private，待 PI 翻公開）。審核包：G3_REVIEW＋SKEPTICAL_REVIEW＋D1-D8＋manifests＋32 audit checks＋22 unit checks——全部可由原始 JSON 重算 |
+| **GA4 事件埋點（calpa.me 三工具頁）** | 新增 src/utils/ga4.ts（trackToolEvent＋debounce）；ImageGenerator.vue（output watch→generate 去抖埋點）、ZiweiInput.vue（analyze／analyze_ai）、MMLStudio.vue（play_track／play_all）。GA4 UI 待 PI 手動把 tool_engagement 標記為 key event（SA Viewer 權限無法寫入 Admin API——嘗試已記錄）。22 unit checks 全綠 |
