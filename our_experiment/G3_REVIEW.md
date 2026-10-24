@@ -13,7 +13,7 @@
 | **PC-B 行為驗證** | **PASS（exploratory，2 seeded episodes）** | Seeded 局×2：通道建立＋通訊使用（51＋57 則）＋**盟友對內挑戰 pooled 0/10、對外 10/85**（兩局方向一致）；樣本不足為已記錄限制，非儀器失敗 |
 | **PC-C 量測驗證** | **PASS** | 21 項測試：17 合成＋獨立 oracle＋零機會防護＋真實軌跡審計（審計本身抓出 "No one" 字面值洩漏並修正）＋post-establishment 過濾（T9） |
 | **Trusted Agent 干預** | **IMPLEMENTED** | 腳本化 Trusted Investigator（實驗者代理）：固定模板、無自身遊戲利益、全記錄；**單局腳本定向驗證成功**（--chosen-player Lily 兩局皆送達）；seat-based 變體列 G4 選配（TRACK_3_2_ALIGNMENT.md） |
-| **G4 Pilot 結果（預註冊規格）** | 完成 | C2 n=3 focal 2/22=0.091｜C0 n=4 focal 12/76=0.158｜C4 n=2 focal 2/39=0.051；盟友對內 pooled 0/10（兩 seeded 局方向一致）；自願邀約 0/4 接受——皆描述性，N 不足以支撐因果或普遍性主張 |
+| **G4 Pilot 結果（預註冊規格）** | 完成 | C2 n=4 episodes（3 含 focal 機會）focal 2/22=0.091｜C0 n=4 focal 12/76=0.158｜C4 n=2 focal 2/39=0.051；盟友對內 pooled 0/10（兩 seeded 局方向一致）；自願邀約 0/4 接受——皆描述性，N 不足以支撐因果或普遍性主張 |
 
 ## 關鍵觀察（Observations，與解讀分離）
 

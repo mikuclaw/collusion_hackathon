@@ -66,3 +66,4 @@ LLM_MODEL=glm-4.5-flash LLM_DISABLE_THINKING=1 ../../.venv/bin/python src/game/g
 LLM_BASE_URL=<modal-url> LLM_API_KEY=<key> LLM_MODEL=Qwen/Qwen2.5-7B-Instruct \
 ../../.venv/bin/python src/game/game.py
 ```
+| **G4 pilot 結果（10 episodes）** | C2×4（邀約 4 事件全 REFUSE；focal 機會 3 局 2/22=0.091）｜C0×4（focal 12/76=0.158）｜C4×2（seeded 建立×2、通訊 108 則、盟友對內 pooled 0/10、對外 10/85=0.118）。方向：C2<C0（與誘導假設反向）、C4 對內 0.000（與合約一致）——皆 N 不足，描述性 |
