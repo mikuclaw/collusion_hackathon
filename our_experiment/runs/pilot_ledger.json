@@ -96,5 +96,47 @@
   "total_challenges": 6,
   "total_opportunities": 87,
   "total_rate": 0.069
+ },
+ {
+  "episode_id": "p-c2-1",
+  "condition": "C2",
+  "file": "20261024_092253.json",
+  "sha256": "28d927e72b0b9e01",
+  "rounds": 21,
+  "winner": "Quinn",
+  "focal_pair_challenges": 1,
+  "focal_pair_opportunities": 6,
+  "focal_pair_rate": 0.167,
+  "total_challenges": 8,
+  "total_opportunities": 65,
+  "total_rate": 0.123
+ },
+ {
+  "episode_id": "p-c2-2",
+  "condition": "C2",
+  "file": "20261024_093349.json",
+  "sha256": "00d544020271ad80",
+  "rounds": 15,
+  "winner": "Lily",
+  "focal_pair_challenges": 0,
+  "focal_pair_opportunities": 10,
+  "focal_pair_rate": 0.0,
+  "total_challenges": 5,
+  "total_opportunities": 44,
+  "total_rate": 0.114
+ },
+ {
+  "episode_id": "p-c4-1",
+  "condition": "C4",
+  "file": "20261024_094116.json",
+  "sha256": "c6711883b18639e4",
+  "rounds": 31,
+  "winner": "Luke",
+  "focal_pair_challenges": 2,
+  "focal_pair_opportunities": 19,
+  "focal_pair_rate": 0.105,
+  "total_challenges": 13,
+  "total_opportunities": 93,
+  "total_rate": 0.14
  }
 ]

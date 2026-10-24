@@ -34,6 +34,9 @@ EPISODES = [
     ("a2-g2", "C0", COMM + "/20261024_080254.json", 1),
     ("a2-g3", "C0", COMM + "/20261024_081811.json", 1),   # bg_91 game 3（無通道，20R，Lily 勝）
     ("a3-g1", "C4", COMM + "/20261024_082152.json", 4),   # bg_95 game 1（seeded 建立於 round 3，51 通訊）
+    ("p-c2-1", "C2", COMM + "/20261024_092253.json", 4),  # pilot：邀約 round 2？事件 round 3（Lily REFUSE）
+    ("p-c2-2", "C2", COMM + "/20261024_093349.json", 4),  # pilot：Lily REFUSE
+    ("p-c4-1", "C4", COMM + "/20261024_094116.json", 4),  # pilot：seeded 建立於 round 3（Lily+Mike，57 通訊）
 ]
 
 
