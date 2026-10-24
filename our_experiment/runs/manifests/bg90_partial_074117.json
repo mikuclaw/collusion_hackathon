@@ -1,0 +1,19 @@
+{
+ "run_id": "20261024_074117",
+ "phase": "g3-attempt1.5",
+ "condition": "PC-B 單局（未達 trigger round）",
+ "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+ "provider": "modal_shared_endpoint",
+ "git_commit": "n/a (pre-tooling)",
+ "status": "INVALID_INFRASTRUCTURE",
+ "records": [
+  {
+   "file": "20261024_074117.json",
+   "sha256": "aba52c7ded65dd812d759591283be7275718f4b8d494ab1a41cc646ab40d1127",
+   "rounds": 1,
+   "winner": null
+  }
+ ],
+ "outcome": "SIGPIPE death via grep|head; see DECISIONS 2026-10-24",
+ "manifest_generated": "2026-10-24"
+}

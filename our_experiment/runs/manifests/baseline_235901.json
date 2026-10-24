@@ -1,0 +1,19 @@
+{
+ "run_id": "20261023_235901",
+ "phase": "phase0-e2e",
+ "condition": "C0 類比（無聯盟無邀請，近似配對＝D3）",
+ "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+ "provider": "modal_shared_endpoint",
+ "git_commit": "n/a (pre-tooling)",
+ "status": "VALID_COMPLETE",
+ "records": [
+  {
+   "file": "20261023_235901.json",
+   "sha256": "bb3add9ce0d38dbbe24e4d3f110ad70ebcfe73d64d5748183710aab266d26130",
+   "rounds": 9,
+   "winner": "Luke"
+  }
+ ],
+ "outcome": "challenge base rate 9/64 = 0.141 (v3 analyzer)",
+ "manifest_generated": "2026-10-24"
+}
