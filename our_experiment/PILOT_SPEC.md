@@ -53,3 +53,9 @@ G3 過閘（G3_REVIEW.md GO）。本文件升格為**凍結協議**，確認性�
 - 分析程序凍結版本＝pilot_ledger.py @ 凍結 commit；結果產出後僅修文字不改計算
 
 PI 已核准擴張（playbook「pilot 3-5 seeds → 正式 10-20」路徑；時間限制下取 C2×8/C0×6）。
+
+**確認性批次納入規則（預註冊於資料落地前）**：`main_c2_1..4` 與 `main_c0_1..2` 六個
+episodes **全數入帳**，game_id 以 log 時間戳為準；排除僅限已凍結的 INVALID 規則
+（SIGPIPE/程序死亡/JSON 不可解析/邀約未送達——見 invalid_registry.csv）。
+pilot_ledger.py 的 EPISODES 清單增補屬**註冊行為**（資料指標），不構成計算變更；
+分析函式自凍結 commit 起不再修改。
