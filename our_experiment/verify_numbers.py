@@ -23,6 +23,7 @@ BASE = ("/Users/miku/Github/collusion_hackathon/llm-agent-collusion-2/"
 COMM = BASE + "/Lily-Luke-Mike-Quinn_secret_comm"
 PLAIN = BASE + "/Lily-Luke-Mike-Quinn"
 PAPER = os.path.join(os.path.dirname(os.path.abspath(__file__)), "paper", "main.md")
+PAPER_EN = os.path.join(os.path.dirname(os.path.abspath(__file__)), "paper", "main_en.typ")
 
 FAILURES = []
 
@@ -68,6 +69,7 @@ def resolve_path(path):
 
 def main():
     paper = open(PAPER).read()
+    paper_en = open(PAPER_EN).read()
 
     # E0：所有 EPISODES 路徑已解析（無殘留 glob 佔位）——有意義的不變式
     unresolved = [e[0] for e in EPISODES if resolve_path(e[3]) is None]
@@ -125,12 +127,15 @@ def main():
     check("E5b 094116 盟友對內 0/6", (w2, o2) == (0, 6), f"{w2}/{o2}")
     check("E5c pooled (0, 10)", (w1 + w2, o1 + o2) == (0, 10), f"{w1 + w2}/{o1 + o2}")
 
-    # paper 必含數字（D6 修正後終版）
-    expected = ["0.106", "0.066", "0.158", "0.051", "0.050", "0.069", "0.106",
+    # paper 必含數字（D6 修正後終版；中英雙文件都必須存在）
+    expected = ["0.106", "0.066", "0.158", "0.051", "0.050", "0.069",
                 "10", "108", "51", "57", "0/10", "10/85", "9/85", "4/61",
                 "2/39", "1/20", "12/76", "19/180", "6/87", "13/93"]
-    for num in expected:
-        check(f"E6 paper 含 {num}", num in paper, "")
+    for num in sorted(set(expected)):
+        in_src = num in paper
+        in_en = num in paper_en
+        check(f"E6 {num} 於中文源＋英文提交物", in_src and in_en,
+              f"src={in_src} en={in_en}" if not (in_src and in_en) else "")
 
     # 幻影引用不得殘留
     for phantom in ["Terdich", "Kaneko", "Shapiro et al"]:
