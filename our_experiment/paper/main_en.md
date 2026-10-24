@@ -1,4 +1,5 @@
-# Can Trusted Undercover Agents Detect Collusion Without Inducing It?
+# Trusted Collusion Probes: Refusal, Forced Alliances, and Behavioral Evidence in LLM Agents
+# (formerly "Can Trusted Undercover Agents Detect Collusion Without Inducing It?" — renamed to match delivered scope)
 # A Pre-Registered Single-Model Study in the Liar's Bar Harness
 
 AI Collusion Research Sprint 2026 — Track 3.2

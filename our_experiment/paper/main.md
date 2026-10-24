@@ -1,4 +1,5 @@
-# Can Trusted Undercover Agents Detect Collusion Without Inducing It?
+# Trusted Collusion Probes: Refusal, Forced Alliances, and Behavioral Evidence in LLM Agents
+# （原題 Can Trusted Undercover Agents Detect Collusion Without Inducing It? 依交付範圍精準化）
 # AI Collusion Research Sprint 2026 — Track 3.2（論文源碼；官方 Google Docs 模板於提交日轉錄）
 
 > 狀態：METHODS/INTRO/RELATED 可寫；RESULTS/DISCUSSION 等真實數據（不預填）。

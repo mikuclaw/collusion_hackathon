@@ -1,4 +1,5 @@
-// Can Trusted Undercover Agents Detect Collusion Without Inducing It?
+// Former title (research-question form): Can Trusted Undercover Agents Detect Collusion Without Inducing It?
+// Renamed to match delivered scope: elicitation + forced alliances + behavioral measurement
 // AI Collusion Research Sprint 2026 — Track 3.2
 // Compile: typst compile paper/main_en.typ paper/main_en.pdf
 
@@ -18,7 +19,8 @@
 
 #align(center)[
   #text(size: 16pt, weight: "bold")[
-    Can Trusted Undercover Agents Detect Collusion Without Inducing It? \
+    Trusted Collusion Probes: Refusal, Forced Alliances, and Behavioral
+    Evidence in LLM Agents \
     A Protocol-Frozen Single-Model Study in the Liar's Bar Harness
   ]
   #v(0.8em)
@@ -388,8 +390,9 @@ G3\_REVIEW, SKEPTICAL\_REVIEW, run manifests with SHA-256 hashes for all 20
 raw episode records, and the frozen analysis scripts (`analyze_g3.py`, `test_metrics.py` — 22 unit checks, `pilot_ledger.py`,
 `verify_numbers.py` — 32 audit checks recomputing every number in this paper
 from raw JSON). The package is archived at
-`github.com/itsuki2049/collusion-track32-study` (repository currently private;
-it will be made public upon the sprint's conclusion). Every reported figure
+`github.com/itsuki2049/collusion-track32-study` (public repository; the raw
+episode logs were scanned for credentials and private infrastructure details
+before publication, and the endpoint configuration file is excluded). Every reported figure
 regenerates via `python3 our_experiment/pilot_ledger.py` and
 `python3 our_experiment/verify_numbers.py`. If the submission portal does not
 accept supplementary files, the package will be released on a public
