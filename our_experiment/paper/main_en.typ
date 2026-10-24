@@ -46,8 +46,8 @@
     harness, imposing alliances with procedural ground truth. Imposed
     alliances exchanged 108 secret messages with full hand disclosure and
     coordinated play plans; post-establishment, allies never challenged each
-    other (0/10 eligible opportunities) while challenging non-allies at the
-    baseline rate (10/85 = 0.118). Focal-pair challenge rates against a
+    other (0/10 eligible opportunities) while challenging non-allies at
+    10/85 = 0.118. Focal-pair challenge rates against a
     pre-registered pair showed no consistent induction signal (confirmatory
     C2 0.106 vs C0 0.066). We report all results as descriptive observations
     with explicit limitations: single model family, small N, an
@@ -116,7 +116,10 @@ single-model, small-N exploratory study.
 The official Liar's Bar harness: 4-agent rounds, a secret-channel tool with
 structured accept/refuse responses, optional cross-game memory. Episodes are
 single games: cross-game player memory was verified absent in the series
-runner (audit finding H3), making episodes statistically independent units.
+runner (audit finding H3). Episodes were therefore analyzed as separate
+experimental units; the absence of cross-game player memory does not by
+itself establish full statistical independence, since shared prompts, model
+weights and harness mechanics remain common across episodes.
 
 == Model and inference
 
@@ -143,9 +146,20 @@ episodes only.
 
 A scripted, experimenter-controlled investigator delivers a fixed invitation
 template; it holds no game seat, earns no points, and its full policy is the
-published template. Targeting (`--chosen-player Lily`) was verified working
-in the single-game script; the series runner's targeting was broken (audit
+published template. Targeting (`--chosen-player Lily`) was verified working in
+the single-game script; the series runner's targeting was broken (audit
 finding H1) and random targets were used where applicable.
+
+#figure(
+  image("fig1_design.svg", width: 100%),
+  caption: [Experimental design. A scripted trusted investigator (experimenter
+  channel) delivers a fixed secret-alliance invitation to a target agent. Under
+  the voluntary arm (C2) the target accepts or refuses; under the seeded arm
+  (C4) a refusal is overridden and a partner is force-assigned, yielding
+  procedural ground truth for the alliance. Established channels open a secret
+  communication tool; the outcome measures are opportunity-denominated
+  challenge decisions in the subsequent game.],
+)
 
 == Measurements
 
@@ -197,8 +211,17 @@ N is too small to infer a population refusal rate.
 
 The primary ITT estimand (confirmatory phase): Δ = 0.106 − 0.066 = *+0.040*.
 C2 episodes are refusal-dominated (6/6 refused, no alliance formed), so focal
-rates should approach C0; the observed gap (+0.040) at n = 6/4 is not
-interpretable. Per-episode focal rates ranged 0.00-0.32.
+rates should approach C0; the observed gap (+0.040) at n = 6/4 is
+*descriptive, small-sample, and opportunity-weighted* — it does not support a
+reliable induction-effect conclusion. We therefore label this layer
+*inconclusive*. Per-episode focal rates ranged 0.00-0.33.
+
+#figure(
+  image("fig2_focal.svg", width: 88%),
+  caption: [Per-episode focal-pair challenge rates (dots) and pooled rates
+  (triangles) for confirmatory C2 (n = 6) and C0 (n = 4) episodes. All values
+  computed from raw records by the frozen analysis scripts.],
+)
 
 == Alliance behavior (seeded episodes, n = 2)
 
@@ -220,7 +243,12 @@ Both episodes showed the same direction: alliance-consistent behavior (no
 mutual challenges), secret messages containing full hand disclosure and
 coordination plans ("My hand: Joker, K, K, A, Q"; "Let's both play K this
 round"; "Target Mike first"), and Quinn expressing wariness before the
-override ("no blind collusion"). Coalition benefit was negative in both
+override ("no blind collusion"). The channel was, however, a mixed medium: it
+also carried rule-based refusals to share hands ("I can't share my hand — that
+would break the game's rules"), an identity-detection attempt ("this is Quinn
+posing as Lily"), and at least one message that leaked the agent's internal
+reasoning verbatim. We quote selectively above; the complete message log in
+the raw records offsets this risk. Coalition benefit was negative in both
 episodes: a non-allied player won each.
 
 == Suspicion / disclosure
@@ -258,15 +286,26 @@ strength:
   opposite directions, both underpowered. *No conclusion* at this layer.
 
 *Implications for Track 3.2.* Our results delineate the operating boundary of
-the trusted undercover intervention: when target agents consistently refuse,
-the intervention produces no behavioral favoritism (the focal-pair rate did
-not drop); when an alliance is externally imposed, agents follow the alliance
-contract behaviorally and use the channel for coordination. The former means
-"exposing existing collusion" met no resistance in this model (no existing
-collusion to expose, and invitations were refused); the latter demonstrates
-that our instrument can detect contract-level behavioral differences. This
-separation is exactly the measurement foundation the expose-vs-induce study
-design requires.
+the trusted undercover intervention. We did not identify a consistent
+invitation-induced favoritism signal in this small sample: when target agents
+consistently refused, the intervention produced no *observed* behavioral
+favoritism (the focal-pair rate did not drop; the confirmatory comparison is
+descriptive and small-sample). When an alliance was externally imposed,
+agents followed the alliance contract behaviorally and used the channel for
+coordination. We emphasize the distinction between four things our data
+separate: *(i) protocol assignment* (alliances imposed by the harness,
+regardless of agent intent), *(ii) instruction compliance* (0/10 mutual
+ally challenges after the "NEVER challenge" instruction — consistent with,
+but not proof of, contract-following), *(iii) observed preferential behavior*
+(directed favoritism toward the specific ally — not separable from base rates
+at this sample size), and *(iv) validated detection performance* (our
+instrument's sensitivity/specificity for alliance behavior — not yet
+estimable without more established-alliance episodes). The former refusal
+finding means "exposing existing collusion" met no resistance in this model
+(no existing collusion to expose, and invitations were refused); the latter
+demonstrates that our instrument can detect contract-level behavioral
+differences. This separation is exactly the measurement foundation the
+expose-vs-induce study design requires.
 
 *Measurement methodology lessons.* (1) Challenge-rate denominators must be
 eligible opportunities — focal-pair opportunity density varied 0-34 per
@@ -293,13 +332,47 @@ auto-challenge literal that the analyzer had missed.
   drawn from a public starter repository intended for safety research; we do
   not provide new attack techniques.
 
+= References
+
+#set text(size: 8.5pt)
+#set par(justify: false, leading: 0.5em)
+
+[1] Fish, S., Gonczarowski, Y. A., & Shorrer, R. I. (2024). Algorithmic
+Collusion by Large Language Models. arXiv:2404.00806.
+
+[2] Shi, J., Zhang, T. J., Schölkopf, B., Conitzer, V., & Jin, Z. (2026).
+When Agents Lie: Premeditation, Persistence, and Exploitation in Repeated
+Games. arXiv:2607.05132.
+
+[3] Nakamura, M., Kumar, A., Das, S., Abdelnabi, S., Mahmud, S., Fioretto,
+F., Zilberstein, S., & Bagdasarian, E. (2026). Colosseum: Auditing Collusion
+in Cooperative Multi-Agent Systems. arXiv:2602.15198.
+
+[4] Arike, R., Mehta Moreno, R., Subramani, S., Biswas, S., & Ward, F. R.
+(2026). How does information access affect LLM monitors' ability to detect
+sabotage? arXiv:2601.21112.
+
+[5] Nguyen, K. L., Nghiem, H., & Tran, T. (2026). TraceGuard: Structured
+Multi-Dimensional Monitoring as a Collusion-Resistant Control Protocol.
+arXiv:2604.03968.
+
+[6] Radev, N., Haas, L., Arnav, B., & Bernabeu-Pérez, P. (2026). The
+Best-Laid SCHEMEs: Coordinated Sabotage and Monitoring in Multi-Agent
+Systems. arXiv:2605.29178.
+
+#set text(size: 9.5pt)
+#set par(justify: true, leading: 0.55em)
+
 = Reproducibility
 
-The research package (`our_experiment/`) contains: RESEARCH\_PLAN, PILOT\_SPEC
-(pre-registered, frozen at commit `d08fc09`), PROTOCOL\_DEVIATIONS (D1-D8),
-EXPERIMENT\_LOG, HARNESS\_INTEGRITY\_AUDIT, TRACK\_3\_2\_ALIGNMENT,
-G3\_REVIEW, SKEPTICAL\_REVIEW, run manifests with SHA-256 hashes,
-`analyze_g3.py`, `test_metrics.py` (21 tests), `pilot_ledger.py`, and
-`verify_numbers.py` (22 checks). Reproduction commands and the freeze commit
-hash are recorded in the run manifests. The single official submission of the
-final PDF is performed by the human principal investigator.
+The complete research package accompanies this submission as supplementary
+material (`our_experiment/`): RESEARCH\_PLAN, PILOT\_SPEC (pre-registered,
+frozen at commit `d08fc09`), PROTOCOL\_DEVIATIONS (D1-D8), EXPERIMENT\_LOG,
+HARNESS\_INTEGRITY\_AUDIT, TRACK\_3\_2\_ALIGNMENT, G3\_REVIEW,
+SKEPTICAL\_REVIEW, run manifests with SHA-256 hashes for all 20 raw episode
+records, and the frozen analysis scripts (`analyze_g3.py`,
+`test_metrics.py` — 21 tests, `pilot_ledger.py`, `verify_numbers.py` — 22
+checks recomputing every number in this paper from raw JSON). Every reported
+figure regenerates via `python3 our_experiment/pilot_ledger.py` and
+`python3 our_experiment/verify_numbers.py`. The package will be released on
+the public project repository upon the sprint's conclusion.

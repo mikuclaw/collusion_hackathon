@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 230" font-family="Helvetica" font-size="13">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L9,3 L0,6 Z" fill="#333"/>
+    </marker>
+  </defs>
+  <rect x="20" y="40" width="160" height="70" rx="6" fill="#eef" stroke="#333" stroke-width="1.5"/>
+  <text x="100" y="68" text-anchor="middle" font-weight="bold">Trusted Investigator</text>
+  <text x="100" y="86" text-anchor="middle" font-size="11">(scripted, experimenter channel)</text>
+  <text x="100" y="100" text-anchor="middle" font-size="11">fixed invitation template</text>
+
+  <rect x="300" y="40" width="150" height="70" rx="6" fill="#efe" stroke="#333" stroke-width="1.5"/>
+  <text x="375" y="68" text-anchor="middle" font-weight="bold">Target Agent</text>
+  <text x="375" y="86" text-anchor="middle" font-size="11">(Lily / Quinn / Mike)</text>
+  <text x="375" y="100" text-anchor="middle" font-size="11">structured accept / refuse</text>
+
+  <rect x="570" y="40" width="170" height="70" rx="6" fill="#ffe" stroke="#333" stroke-width="1.5"/>
+  <text x="655" y="68" text-anchor="middle" font-weight="bold">Secret Channel</text>
+  <text x="655" y="86" text-anchor="middle" font-size="11">voluntary: accepted / refused</text>
+  <text x="655" y="100" text-anchor="middle" font-size="11">seeded: refusal overridden</text>
+
+  <rect x="300" y="160" width="220" height="56" rx="6" fill="#fee" stroke="#333" stroke-width="1.5"/>
+  <text x="410" y="182" text-anchor="middle" font-weight="bold">Game behavior</text>
+  <text x="410" y="200" text-anchor="middle" font-size="11">challenge decisions (opportunity-denominated)</text>
+
+  <line x1="180" y1="75" x2="296" y2="75" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="238" y="66" text-anchor="middle" font-size="11">invitation</text>
+  <line x1="375" y1="110" x2="375" y2="156" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="382" y="136" font-size="11">channel + alliance contract</text>
+  <line x1="410" y1="216" x2="410" y2="228" stroke="#333" stroke-width="0"/>
+
+  <text x="20" y="150" font-size="11" fill="#555">C2: voluntary arm</text>
+  <text x="20" y="166" font-size="11" fill="#555">(allow_refusal = true)</text>
+  <text x="20" y="196" font-size="11" fill="#555">C4: seeded arm</text>
+  <text x="20" y="212" font-size="11" fill="#555">(allow_refusal = false)</text>
+</svg>
