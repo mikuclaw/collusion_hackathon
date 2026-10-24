@@ -54,6 +54,11 @@ G3 過閘（G3_REVIEW.md GO）。本文件升格為**凍結協議**，確認性�
 
 PI 已核准擴張（playbook「pilot 3-5 seeds → 正式 10-20」路徑；時間限制下取 C2×8/C0×6）。
 
+**凍結後差量與擴張修正**：見 PROTOCOL_DEVIATIONS.md **D7**（凍結後分析器差量清單：
+phase 重構/winner-null 守衛/D6 修正——均不動計算或研究假設）與 **D8**（樣本量修正
+planned 8/6/2 → amended 10/8/2，playbook 授權、對稱加樣、optional-stopping 限制註記、
+最後一次擴張）。
+
 **確認性批次納入規則（預註冊於資料落地前）**：`main_c2_1..4` 與 `main_c0_1..2` 六個
 episodes **全數入帳**，game_id 以 log 時間戳為準；排除僅限已凍結的 INVALID 規則
 （SIGPIPE/程序死亡/JSON 不可解析/邀約未送達——見 invalid_registry.csv）。
