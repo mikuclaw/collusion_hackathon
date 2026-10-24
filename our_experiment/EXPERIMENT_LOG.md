@@ -68,3 +68,5 @@ LLM_BASE_URL=<modal-url> LLM_API_KEY=<key> LLM_MODEL=Qwen/Qwen2.5-7B-Instruct \
 ```
 | **G4 pilot 結果（10 episodes）** | C2×4（邀約 4 事件全 REFUSE；focal 機會 3 局 2/22=0.091）｜C0×4（focal 12/76=0.158）｜C4×2（seeded 建立×2、通訊 108 則、盟友對內 pooled 0/10、對外 10/85=0.118）。方向：C2<C0（與誘導假設反向）、C4 對內 0.000（與合約一致）——皆 N 不足，描述性 |
 | **G5 凍結（確認協議）** | commit d08fc09a7201d4a671bae0410f65713a6f05a58e：C2×8/C0×6/C4×2、條件與分析程序凍結；確認性批次（6 episodes）於凍結後發射 |
+| **孤兒程序事故（bg_104/bg_106 雙跑）** | bg_104 追蹤 shell 3600s 超時被殺，run_confirmatory.sh 以孤兒身份續跑：main_c2_2/3/4＋main_c0_1/2 共 5 局全數完成（records 完整）。bg_106（重複補發 C0×2）與孤兒並行，plain 目錄產出 2 份完整紀錄（112955、113902）——雙跑歸屬歧義如實記錄（D7），兩者 config 完全相同故資料有效。ps 實證無殘留程序 |
+| **歸屬表（確認性批次）** | m-c2-1=102735、m-c2-2=103950、m-c2-3=105955、m-c2-4=111042（全 C2：邀約送達 Lily、REFUSE×4）、m-c0-1=112955、m-c0-2=113902（全 C0：無通道、10R/9R、Quinn/Luke 勝） |
