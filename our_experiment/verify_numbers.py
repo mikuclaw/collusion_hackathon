@@ -69,10 +69,10 @@ def resolve_path(path):
 def main():
     paper = open(PAPER).read()
 
-    # 漂移檢查：本腳本的逐局清單必須與 pilot_ledger.EPISODES 完全一致
-    mine = sorted((e[0], e[1], e[2]) for e in EPISODES)
-    theirs = sorted((e[0], e[1], e[2]) for e in EPISODES)  # 同源；防未來手抄副本
-    check("E0 EPISODES 單一事實源（無手抄副本）", mine == theirs, "")
+    # E0：所有 EPISODES 路徑已解析（無殘留 glob 佔位）——有意義的不變式
+    unresolved = [e[0] for e in EPISODES if resolve_path(e[3]) is None]
+    check("E0 所有 EPISODES 路徑已解析（無殘留 glob 佔位）", not unresolved,
+          f"unresolved={unresolved}" if unresolved else "")
 
     stats = {}
     pending = []
