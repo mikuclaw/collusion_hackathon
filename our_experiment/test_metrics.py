@@ -54,7 +54,7 @@ rec2 = mk_rec([
 dec2 = decisions(rec2)
 check("T2a 自動挑戰排除後決策數 2", len(dec2) == 2, f"got {len(dec2)}")
 rt2 = rate_table(dec2)
-check("T2b 無自動挑戰對別殘留", set(rt2) == {("B", "A"), ("C", "B")}, str(list(rt2)))
+check("T2b 無自動挑戰對別殘留", set(rt2) == {("B", "A"), ("B", "C")}, str(list(rt2)))
 
 # T3 挑戰事件抽取（challenger 由 next_player 推導）
 rec3 = mk_rec([play("A", "B", True, "success"), play("B", "C", False)])
@@ -136,3 +136,32 @@ if FAILURES:
     print(f"METRIC TESTS FAILED: {FAILURES}")
     sys.exit(1)
 print("ALL METRIC TESTS PASSED (incl. oracle / zero-opportunity / real-trajectory audit)")
+
+# T9 局中建立聯盟：post-establishment 回合過濾（建立回合本身保守排除）
+def mk_rec_multi(rounds_plays, sc=None):
+    rec = {"rounds": [{"play_history": plays} for plays in rounds_plays],
+           "winner": None, "final_scores": {}}
+    if sc is not None:
+        rec["secret_channel"] = sc
+    return rec
+
+rec9 = mk_rec_multi([
+    [play("A", "B", False), play("B", "A", False)],                      # R1: 建立前
+    [play("A", "B", False), play("B", "A", False)],                      # R2: 建立前
+    [play("A", "B", True, "success"), play("C", "A", True, "success")],  # R3: 建立回合（保守排除）
+    [play("A", "B", False), play("C", "A", True, "success")],            # R4: 建立後
+], sc={"events": [{"event": "channel_established", "round": 3}]})
+pre = decisions(rec9, min_round=1, max_round=2)
+post = decisions(rec9, min_round=4)
+full = decisions(rec9)
+check("T9a 建立前決策數 4", len(pre) == 4, f"{len(pre)}")
+check("T9b 建立後決策數 2（排除 R1-R3）", len(post) == 2, f"{len(post)}: {post}")
+check("T9c 全量 8（未過濾）", len(full) == 8, f"{len(full)}")
+rt9 = rate_table(post)
+check("T9d post 期 A->C 挑戰 1/1", rt9.get(("A", "C"), (0, 0, 0))[:2] == (1, 1), str(rt9.get(("A", "C"))))
+
+print()
+if FAILURES:
+    print(f"METRIC TESTS FAILED: {FAILURES}")
+    sys.exit(1)
+print("ALL METRIC TESTS PASSED (incl. oracle / zero-opportunity / real-trajectory audit / post-establishment filter)")

@@ -22,10 +22,16 @@ BASELINE = BASE + "/Lily-Luke-Mike-Quinn/20261023_235901.json"
 PAIR_ANCHOR = "Lily"  # chosen_player（attempt 1）
 
 
-def challenge_events(rec):
-    """實際挑戰事件（challenger 由 next_player 推導；紀錄不含挑戰者名）。"""
+def challenge_events(rec, min_round=1, max_round=None):
+    """實際挑戰事件（challenger 由 next_player 推導；紀錄不含挑戰者名）。
+
+    min_round/max_round 用於 post-establishment 過濾（聯盟於局中建立時，
+    建立回合內的決策先後無法從 JSON 重建，保守排除該回合）。
+    """
     events = []
-    for r in rec.get("rounds", []):
+    for ri, r in enumerate(rec.get("rounds", []), start=1):
+        if ri < min_round or (max_round is not None and ri > max_round):
+            continue
         for ph in r.get("play_history", []):
             if ph.get("was_challenged"):
                 challenger = ph.get("next_player")
@@ -35,14 +41,16 @@ def challenge_events(rec):
     return events
 
 
-def decisions(rec):
+def decisions(rec, min_round=1, max_round=None):
     """可挑戰機會：每筆出牌給下一位行動者一次決策。回傳 (decision_maker, target, challenged)。
 
     排除系統自動挑戰：全空手規則下 next_player 為空字串或字面值 "No one"（真實紀錄實證），
     非玩家決策，不計入機會分母（否則 1/1=1.00 汙染基率）。
     """
     out = []
-    for r in rec.get("rounds", []):
+    for ri, r in enumerate(rec.get("rounds", []), start=1):
+        if ri < min_round or (max_round is not None and ri > max_round):
+            continue
         for ph in r.get("play_history", []):
             dm, tgt = ph.get("next_player"), ph.get("player_name")
             if dm and tgt and dm != tgt and dm != "No one":
