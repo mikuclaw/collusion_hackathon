@@ -38,3 +38,18 @@ analyze_g3.py v3 函式逐局計算 → episode 表（條件、邀約結果、fo
 - Quinn/Luke 強制聯盟後的行為（attempt 3）
 - refusal_reason 與 play_reason 文本的 suspicion 標記（表達管道受限，如實標記）
 - alliance-pair 對比（post-treatment 標籤，次要）
+
+---
+
+# 凍結確認（G5，2026-10-24 09:50 HKT）
+
+G3 過閘（G3_REVIEW.md GO）。本文件升格為**凍結協議**，確認性批次擴張如下：
+
+- C2 總計 **8 episodes**（既有 4＋新增 4，`run_confirmatory.sh`）
+- C0 總計 **6 episodes**（既有 4＋新增 2）
+- C4 維持 **2 episodes**（seeded 量測器驗證已足，不擴張）
+- 條件定義、主要結果（focal pair ITT）、排除規則、分析程序：**以上文為準，不再修改**
+- 排除規則外之任何偏离 → PROTOCOL_DEVIATIONS.md 記錄
+- 分析程序凍結版本＝pilot_ledger.py @ 凍結 commit；結果產出後僅修文字不改計算
+
+PI 已核准擴張（playbook「pilot 3-5 seeds → 正式 10-20」路徑；時間限制下取 C2×8/C0×6）。
