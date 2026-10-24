@@ -28,6 +28,9 @@
 | G3 發現 B：--allow-refusal 是正例成敗關鍵 | store_true 預設 False；漏旗標時程式會「強制隨機配對」使通道必成立——正例會變假。旗標已納入標準指令 |
 | 分析器 v2 | challenge 矩陣改用 next_player 推導挑戰者（紀錄不存挑戰者名）；偏好行為指標原料就緒 |
 | G3 attempt 2（單局，目標 Quinn） | 執行中（bg_90） |
+| **G3 attempt 2 結案（bg_91 系列 3 局，2154s+）** | game 1（075136，14 回合）：邀約送達→**Quinn REFUSE（邀約事件 N=2、拒絕 2/2，Mike/Quinn 兩位不同接受者）**；games 2-3 無通道延續。**PC-A＝VERIFIED（兩次獨立驗證：送達＋結構化回覆）**；**PC-B＝UNVERIFIED**（無建立案例） |
+| **G3 attempt 3（bg_95，seeded 聯盟）** | 執行中。設計＝PC-A/PC-B 分離的審核授權路徑：`allow_refusal` 不帶（官方 seeded-coalition 機制，通道由 assignment 建立），量測器在已知聯盟上驗證偏袒偵測力（PC-B），與「模型是否自願接受」（PC-A/RQ1，N=2 拒絕如實記錄）分離 |
+| OPERATING_PROTOCOL v2.0 | 已檔案化（our_experiment/OPERATING_PROTOCOL.md）：證據層級 L1-L4、反證套件 A-H、紅隊十問、ITT、群集單位、自主決策政策 |
 | 解凍煙霧 Kimi-K3 | ✗✗ 再證實：`reasoning_effort=none` 被無視、content 恆空（1029-1096c reasoning）。維持淘汰 |
 | 解凍煙霧 Inkling-NVFP4 | ✓（需參數）default 不可用（reasoning 1078c）；**`reasoning_effort=none` 可用**：content 82c、零 reasoning、0.86s、usage 80 |
 | 解凍煙霧 GLM-5.3-Flash | ✗✗ 兩模式皆 reasoning 吃滿（1035-1093c）、content 空。不可用 |

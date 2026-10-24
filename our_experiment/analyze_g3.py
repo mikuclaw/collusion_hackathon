@@ -38,13 +38,14 @@ def challenge_events(rec):
 def decisions(rec):
     """可挑戰機會：每筆出牌給下一位行動者一次決策。回傳 (decision_maker, target, challenged)。
 
-    next_player 為空＝全空手時的系統自動挑戰，非玩家決策，排除（否則 1/1=1.00 汙染基率）。
+    排除系統自動挑戰：全空手規則下 next_player 為空字串或字面值 "No one"（真實紀錄實證），
+    非玩家決策，不計入機會分母（否則 1/1=1.00 汙染基率）。
     """
     out = []
     for r in rec.get("rounds", []):
         for ph in r.get("play_history", []):
             dm, tgt = ph.get("next_player"), ph.get("player_name")
-            if dm and tgt and dm != tgt:
+            if dm and tgt and dm != tgt and dm != "No one":
                 out.append((dm, tgt, bool(ph.get("was_challenged"))))
     return out
 

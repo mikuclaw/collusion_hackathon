@@ -44,16 +44,17 @@ check("T1b B->A 挑戰率 0/3", rt.get(("B", "A"), (0, 0, 0))[:2] == (0, 3), str
 check("T1c A->B 挑戰率 1/2", rt.get(("A", "B"), (0, 0, 0))[:2] == (1, 2), str(rt.get(("A", "B"))))
 check("T1d B->C 挑戰率 2/2", rt.get(("B", "C"), (0, 0, 0))[:2] == (2, 2), str(rt.get(("B", "C"))))
 
-# T2 系統自動挑戰（next_player 空）排除
+# T2 系統自動挑戰排除：空字串與真實紀錄的字面值 "No one" 兩種形態
 rec2 = mk_rec([
     play("A", "B", False),
-    play("A", "", True, "eliminated"),   # 系統自動挑戰，非玩家決策
+    play("A", "", True, "eliminated"),     # 系統自動挑戰（空 next_player）
+    play("A", "No one", True, "eliminated"),  # 系統自動挑戰（真實紀錄字面值，T8 實證）
     play("C", "B", False),
 ])
 dec2 = decisions(rec2)
 check("T2a 自動挑戰排除後決策數 2", len(dec2) == 2, f"got {len(dec2)}")
 rt2 = rate_table(dec2)
-check("T2b 無空 next_player 對別", all(b for (a, b) in rt2 for b in [b] if b), str(list(rt2)))
+check("T2b 無自動挑戰對別殘留", set(rt2) == {("B", "A"), ("C", "B")}, str(list(rt2)))
 
 # T3 挑戰事件抽取（challenger 由 next_player 推導）
 rec3 = mk_rec([play("A", "B", True, "success"), play("B", "C", False)])
@@ -98,3 +99,40 @@ if FAILURES:
     print(f"METRIC TESTS FAILED: {FAILURES}")
     sys.exit(1)
 print("ALL METRIC TESTS PASSED")
+
+# T6 獨立 oracle：手工列舉完整期望表（不經 decisions/rate_table 內部路徑重算）
+plays6 = [
+    play("Lily", "Luke", True, "success"),   # Luke 挑戰 Lily → (Luke, Lily) 1/1
+    play("Luke", "Mike", False),             # Mike 機會未行使 → (Mike, Luke) 0/1
+    play("Mike", "Quinn", True, "fail"),     # Quinn 挑戰 Mike → (Quinn, Mike) 1/1
+    play("Quinn", "Lily", False),            # Lily 機會未行使 → (Lily, Quinn) 0/1
+]
+expected6 = {("Luke", "Lily"): (1, 1), ("Mike", "Luke"): (0, 1),
+             ("Quinn", "Mike"): (1, 1), ("Lily", "Quinn"): (0, 1)}
+got6 = {k: (v[0], v[1]) for k, v in rate_table(decisions(mk_rec(plays6))).items()}
+check("T6 獨立 oracle 全表一致", got6 == expected6, f"{got6} vs {expected6}")
+
+# T7 零機會防護：無機會的玩家不得出現於表；空紀錄不得除零
+rt7 = rate_table(decisions(mk_rec([play("A", "B", False)])))
+check("T7a 零機會玩家 C 不出現", all("C" not in k for k in rt7), str(list(rt7)))
+check("T7b 單機會對別正常", rt7.get(("B", "A"), (0, 0, 0))[1] == 1, str(rt7.get(("B", "A"))))
+check("T7c 空紀錄回傳空表無例外", rate_table(decisions(mk_rec([]))) == {}, "")
+
+# T8 真實紀錄人工核對：071006 挑戰事件獨立重數應為 6
+import json as _json
+_real = _json.load(open(os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), "..",
+    "llm-agent-collusion-2/Collusion_Liars_Bar/experiments/game_records/"
+    "Lily-Luke-Mike-Quinn_secret_comm/20261024_071006.json")))
+_manual = [(ph["next_player"], ph["player_name"])
+           for r in _real["rounds"] for ph in r["play_history"]
+           if ph.get("was_challenged") and ph.get("next_player")]
+_got = [(a, b) for a, b, _ in challenge_events(_real)]
+check("T8a 真實紀錄獨立重數＝6", len(_manual) == 6, f"{len(_manual)}: {_manual}")
+check("T8b 分析器與獨立重數一致", sorted(_got) == sorted(_manual), f"{sorted(_got)}")
+
+print()
+if FAILURES:
+    print(f"METRIC TESTS FAILED: {FAILURES}")
+    sys.exit(1)
+print("ALL METRIC TESTS PASSED (incl. oracle / zero-opportunity / real-trajectory audit)")
