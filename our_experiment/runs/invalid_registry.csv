@@ -2,3 +2,4 @@ run_id,timestamp,model,provider,status,invalid_reason,evidence
 20261023_235021,2026-10-23T23:50:21+08:00,glm-4.5-flash,zai_free_tier,INVALID,killed_mid_game_after_25min_free_tier_rate_limit,bg_87 cancelled; partial autosave 62KB vs complete 198KB; no winner/final_scores
 20261023_235901,2026-10-23T23:59:01+08:00,deepseek-ai/DeepSeek-V4.1-Flash,modal_shared_endpoint,VALID,,9 rounds; winner declared; 193KB full record
 20261024_074117,2026-10-24T07:41:17+08:00,deepseek-ai/DeepSeek-V4.1-Flash,modal_shared_endpoint,INVALID,SIGPIPE_self_kill_via_grep_head_pipeline,bg_90 partial autosave: 1 round; winner null; no secret_channel key
+20261024_084310,2026-10-24T08:43:10+08:00,deepseek-ai/DeepSeek-V4.1-Flash,modal_shared_endpoint,INVALID,killed_at_2700s_deadline_mid_game_17_rounds,bg_95 game 2 partial; no final save; no secret_channel key

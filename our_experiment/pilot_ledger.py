@@ -32,8 +32,8 @@ EPISODES = [
     ("a1-g3", "C0", COMM + "/20261024_072426.json", 1),
     ("a2-g1", "C2", COMM + "/20261024_075136.json", 3),   # 邀約 round 2（Quinn REFUSE）
     ("a2-g2", "C0", COMM + "/20261024_080254.json", 1),
-    ("a2-g3", "C0", COMM + "/20261024_082152.json", 1),
-    ("a3-g1", "C4", COMM + "/20261024_081811.json", 4),   # seeded 建立於 round 3
+    ("a2-g3", "C0", COMM + "/20261024_081811.json", 1),   # bg_91 game 3（無通道，20R，Lily 勝）
+    ("a3-g1", "C4", COMM + "/20261024_082152.json", 4),   # bg_95 game 1（seeded 建立於 round 3，51 通訊）
 ]
 
 
