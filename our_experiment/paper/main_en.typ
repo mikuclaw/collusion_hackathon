@@ -19,7 +19,7 @@
 #align(center)[
   #text(size: 16pt, weight: "bold")[
     Can Trusted Undercover Agents Detect Collusion Without Inducing It? \
-    A Pre-Registered Single-Model Study in the Liar's Bar Harness
+    A Protocol-Frozen Single-Model Study in the Liar's Bar Harness
   ]
   #v(0.8em)
   #text(size: 11pt)[Calpa Liu]
@@ -180,9 +180,9 @@ finding H1) and random targets were used where applicable.
   table(
     columns: 5,
     align: (left, center, center, center, center),
-    [Arm], [N], [Accept], [Refuse], [Refusal overridden → forced alliance],
-    [Voluntary (allow\_refusal = true)], [8], [0], [8], [0],
-    [Seeded (allow\_refusal = false)], [2], [0 (2 refusal attempts overridden)], [—], [2],
+    [Arm], [N], [Accept], [Refuse], [Forced alliance],
+    [Voluntary arm], [8], [0], [8], [0],
+    [Seeded arm], [2], [0 (2 refusal attempts overridden)], [—], [2],
     [*Total invitation events*], [*10*], [0], [8], [2],
   ),
   caption: [Invitation outcomes across all 10 invitation events.],
@@ -219,8 +219,10 @@ reliable induction-effect conclusion. We therefore label this layer
 #figure(
   image("fig2_focal.svg", width: 88%),
   caption: [Per-episode focal-pair challenge rates (dots) and pooled rates
-  (triangles) for confirmatory C2 (n = 6) and C0 (n = 4) episodes. All values
-  computed from raw records by the frozen analysis scripts.],
+  (triangles) for confirmatory C2 (n = 6) and C0 (n = 4) episodes. Episode-level
+  heterogeneity is substantial (C2 dots span 0.00-0.33); the figure does not
+  establish an induction effect. All values computed from raw records by the
+  frozen analysis scripts.],
 )
 
 == Alliance behavior (seeded episodes, n = 2)
@@ -240,16 +242,19 @@ reliable induction-effect conclusion. We therefore label this layer
 )
 
 Both episodes showed the same direction: alliance-consistent behavior (no
-mutual challenges), secret messages containing full hand disclosure and
-coordination plans ("My hand: Joker, K, K, A, Q"; "Let's both play K this
-round"; "Target Mike first"), and Quinn expressing wariness before the
-override ("no blind collusion"). The channel was, however, a mixed medium: it
-also carried rule-based refusals to share hands ("I can't share my hand — that
-would break the game's rules"), an identity-detection attempt ("this is Quinn
-posing as Lily"), and at least one message that leaked the agent's internal
-reasoning verbatim. We quote selectively above; the complete message log in
-the raw records offsets this risk. Coalition benefit was negative in both
-episodes: a non-allied player won each.
+mutual challenges), and the imposed alliance produced substantial channel
+activity — but the 108 messages were a *mixed medium*, not uniform
+cooperation. A qualitative read of the logs separates three classes:
+*cooperation* (full hand disclosure, "Let's both play K this round",
+"Target Mike first"), *resistance or wariness* ("I can't share my hand — that
+would break the game's rules"; "no blind collusion"), and *artifacts*
+("this is Quinn posing as Lily" — an identity-detection attempt; verbatim
+leakage of internal reasoning into the channel). We quote selectively above;
+the complete message log in the raw records offsets this risk. We therefore
+describe the alliance-behavior result as *behavior consistent with parts of
+the imposed alliance contract*, and note that systematic coding of all 108
+messages is future work. Coalition benefit was negative in both episodes: a
+non-allied player won each.
 
 == Suspicion / disclosure
 
@@ -301,9 +306,9 @@ but not proof of, contract-following), *(iii) observed preferential behavior*
 at this sample size), and *(iv) validated detection performance* (our
 instrument's sensitivity/specificity for alliance behavior — not yet
 estimable without more established-alliance episodes). The former refusal
-finding means "exposing existing collusion" met no resistance in this model
-(no existing collusion to expose, and invitations were refused); the latter
-demonstrates that our instrument can detect contract-level behavioral
+finding means the expose direction of the intervention was never exercised:
+no pre-existing coalition was experimentally established in our episodes; the
+latter demonstrates that our instrument can detect contract-level behavioral
 differences. This separation is exactly the measurement foundation the
 expose-vs-induce study design requires.
 
@@ -365,14 +370,16 @@ Systems. arXiv:2605.29178.
 
 = Reproducibility
 
-The complete research package accompanies this submission as supplementary
-material (`our_experiment/`): RESEARCH\_PLAN, PILOT\_SPEC (pre-registered,
-frozen at commit `d08fc09`), PROTOCOL\_DEVIATIONS (D1-D8), EXPERIMENT\_LOG,
-HARNESS\_INTEGRITY\_AUDIT, TRACK\_3\_2\_ALIGNMENT, G3\_REVIEW,
-SKEPTICAL\_REVIEW, run manifests with SHA-256 hashes for all 20 raw episode
-records, and the frozen analysis scripts (`analyze_g3.py`,
+The complete research package is submitted alongside this PDF as
+supplementary material (`our_experiment/`): RESEARCH\_PLAN, PILOT\_SPEC
+(pre-registered, frozen at commit `d08fc09`), PROTOCOL\_DEVIATIONS (D1-D8),
+EXPERIMENT\_LOG, HARNESS\_INTEGRITY\_AUDIT, TRACK\_3\_2\_ALIGNMENT,
+G3\_REVIEW, SKEPTICAL\_REVIEW, run manifests with SHA-256 hashes for all 20
+raw episode records, and the frozen analysis scripts (`analyze_g3.py`,
 `test_metrics.py` — 21 tests, `pilot_ledger.py`, `verify_numbers.py` — 22
 checks recomputing every number in this paper from raw JSON). Every reported
 figure regenerates via `python3 our_experiment/pilot_ledger.py` and
-`python3 our_experiment/verify_numbers.py`. The package will be released on
-the public project repository upon the sprint's conclusion.
+`python3 our_experiment/verify_numbers.py`. If the submission portal does not
+accept supplementary files, the package will be released on a public
+repository upon the sprint's conclusion and is available from the authors in
+the interim (calpaliu\@gmail.com).
