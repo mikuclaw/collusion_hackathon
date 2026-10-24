@@ -33,17 +33,23 @@ single-model, small-N exploratory study.
 
 ## 2. Related Work
 
-- Fish et al. (2024): LLM pricing agents tacitly collude (arXiv:2404.00806) —
-  spontaneous collusion in market settings; our setting is a structured
-  bluffing game with an explicit invitation mechanism.
-- Shapiro et al. (2026, Track 3.2 core): private plans vs. public commitments
-  diverge in >90% of cases — motivates measuring *behavior*, not words.
-- Terdich et al. (2026, Colosseum): coalition advantage emerges with
-  communication; monitoring split by dimension.
-- Nguyen et al. (2026, TraceGuard): multi-dimensional structured monitoring.
-- Kaneko et al. (2026): less-is-more monitoring; single-dimension behavioral
-  monitoring outperformed.
-- Radev et al. (2026, SabotageMonitors): monitors as sabotage targets.
+- Fish et al. (2024, arXiv:2404.00806): LLM pricing agents collude in iterated
+  market games — spontaneous collusion in economic settings; our setting is a
+  structured bluffing game with an explicit invitation mechanism.
+- Shi et al. (2026, arXiv:2607.05132): agents' private plans diverge from their
+  public commitments in the large majority of cases — motivates measuring
+  *behavior*, not words. (Divergence rate re-verified against the paper in G6.)
+- Nakamura et al. (2026, arXiv:2602.15198), Colosseum: coalition advantage
+  emerges with communication; monitoring efficacy varies by dimension.
+- Arike et al. (2026, arXiv:2601.21112): monitors with *less* information access
+  often detect sabotage better than monitors with full traces (ICML 2026) —
+  our opportunity-denominated behavioral metric follows the same principle.
+- Nguyen et al. (2026, arXiv:2604.03968), TraceGuard: a single-agent structured
+  monitor with a reusable rubric — not a collusion detector; we adapt the
+  rubric concept to alliance behavior.
+- The Best-Laid SCHEMEs (2026, arXiv:2605.29178): coordination sabotage that is
+  effective only when agents act jointly, and can evade monitors — related to
+  our multi-agent monitoring threat model. (Author list verified in G6.)
 - Our contribution relative to the above: a *trusted-investigator* intervention
   protocol with procedural alliance ground truth, opportunity-denominated
   behavioral metrics, and an explicit expose-vs-induce decomposition.
