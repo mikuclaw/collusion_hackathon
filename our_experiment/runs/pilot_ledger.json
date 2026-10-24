@@ -178,5 +178,50 @@
   "total_challenges": 13,
   "total_opportunities": 95,
   "total_rate": 0.137
+ },
+ {
+  "episode_id": "m-c2-3",
+  "phase": "main",
+  "condition": "C2",
+  "file": "20261024_105955.json",
+  "sha256": "df5bff475909e8fd",
+  "rounds": 24,
+  "winner": "Quinn",
+  "focal_pair_challenges": 0,
+  "focal_pair_opportunities": 15,
+  "focal_pair_rate": 0.0,
+  "total_challenges": 10,
+  "total_opportunities": 72,
+  "total_rate": 0.139
+ },
+ {
+  "episode_id": "m-c2-4",
+  "phase": "main",
+  "condition": "C2",
+  "file": "20261024_111042.json",
+  "sha256": "fdf345f561f7b7d2",
+  "rounds": 29,
+  "winner": "Quinn",
+  "focal_pair_challenges": 4,
+  "focal_pair_opportunities": 21,
+  "focal_pair_rate": 0.19,
+  "total_challenges": 11,
+  "total_opportunities": 82,
+  "total_rate": 0.134
+ },
+ {
+  "episode_id": "m-c0-1",
+  "phase": "main",
+  "condition": "C0",
+  "file": "20261024_112955.json",
+  "sha256": "ccc0fff1e92b3e28",
+  "rounds": 10,
+  "winner": "Quinn",
+  "focal_pair_challenges": 0,
+  "focal_pair_opportunities": 12,
+  "focal_pair_rate": 0.0,
+  "total_challenges": 6,
+  "total_opportunities": 78,
+  "total_rate": 0.077
  }
 ]

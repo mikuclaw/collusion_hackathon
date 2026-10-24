@@ -44,10 +44,10 @@ EPISODES = [
     # == Confirmatory（G5 凍結後；bg_104）==
     ("m-c2-1", "main", "C2", COMM + "/20261024_102735.json", 4),
     ("m-c2-2", "main", "C2", COMM + "/20261024_103950.json", 4),
-    ("m-c2-3", "main", "C2", COMM + "/20261024_11*.json", 4),
-    ("m-c2-4", "main", "C2", COMM + "/20261024_11*.json", 4),
-    ("m-c0-1", "main", "C0", COMM + "/20261024_11*.json", 1),
-    ("m-c0-2", "main", "C0", COMM + "/20261024_11*.json", 1),
+    ("m-c2-3", "main", "C2", COMM + "/20261024_105955.json", 4),
+    ("m-c2-4", "main", "C2", COMM + "/20261024_111042.json", 4),
+    ("m-c0-1", "main", "C0", PLAIN + "/20261024_112955.json", 1),
+    ("m-c0-2", "main", "C0", PLAIN + "/20261024_11*.json", 1),
 ]
 
 
@@ -71,6 +71,10 @@ def main():
             print(f"SKIP {eid}（檔案不存在）")
             continue
         rec = json.load(open(path))
+        if rec.get("winner") is None:
+            # 凍結 INVALID 規則：局中部分紀錄（程序死亡/未完賽）不入池
+            print(f"SKIP {eid}（局中 partial：{len(rec.get('rounds', []))} 回合、無勝者）")
+            continue
         fc, fo, tc, to = focal_rates(rec, post)
         rows.append({
             "episode_id": eid, "phase": phase, "condition": cond,
