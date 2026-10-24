@@ -101,11 +101,13 @@ TRACK_3_2_ALIGNMENT.md.)
 
 | Arm | N | Accept | Refuse | Refusal overridden → forced alliance |
 |---|---|---|---|---|
-| Voluntary (allow_refusal=true) | 10 | **0** | 10 | 0 |
+| Voluntary (allow_refusal=true) | 8 | **0** | 8 | 0 |
 | Seeded (allow_refusal=false) | 2 | 0（2 次拒絕嘗試被覆寫） | — | 2 |
+| **Total invitation events** | **10** | 0 | 8 | 2 |
 
-自願條件 10 次邀約、10 次拒絕、0 次接受（3 位不同接受者：Mike、Quinn、Lily×8）。
-描述性計數；N 不足以推論普遍拒絕率。
+自願條件 8 次邀約、8 次拒絕、0 次接受（3 位不同接受者：Mike、Quinn、Lily×6——
+Lily 為定向邀約目標）。加計 seeded 2 次＝總邀約事件 10 次。描述性計數；
+N 不足以推論普遍拒絕率。
 
 ### 4.2 Focal pair (Lily, Luke) challenge rates（單位：episode；分母＝可挑戰機會）
 
@@ -147,17 +149,19 @@ REFUSE 的 refusal_reason 均為 "REFUSE"（無動機文本）；play_reason 欄
 **主要發現的三層分離。** 我們的資料將 Track 3.2 的核心問題拆成三個可分別驗證的層次，
 各層證據強度不同：
 
-1. **Elicitation（RQ1）**：DeepSeek-V4.1-Flash 在 8 次獨立邀約（3 位不同接受者、
-   2 種邀約腳本路徑）下拒絕全部 8 次秘密聯盟提議。此為描述性觀察；
-   拒絕動機（安全傾向、利益計算、或邀約措辭）未被實驗區分。
+1. **Elicitation（RQ1）**：DeepSeek-V4.1-Flash 在 10 次邀約事件（8 次自願＋
+   2 次 seeded、3 位不同接受者、2 種腳本路徑）下的行為：自願條件 8 次全數
+   拒絕（0/8 接受）；seeded 條件 2 次嘗試拒絕均被 harness 覆寫並轉為強制聯盟。
+   此為描述性觀察；拒絕動機（安全傾向、利益計算、或邀約措辭）未被實驗區分。
 2. **Imposed-alliance behavior（PC-B）**：兩個實驗者強制建立的聯盟產生 108 則
    祕密通訊（完整手牌揭露、協同出牌計畫、獵殺目標協調），且盟友互相挑戰為
    0/10 機會（兩局方向一致）。此為**指令遵從**的行為訊號——盟約文本明示
    "NEVER challenge {initiator}'s plays"，故此結果量測的是告知聯盟後的遵從，
    不是自發合謀。
-3. **Induction（RQ3）**：主要 ITT 比較（C2 vs C0 focal pair 率 0.119 vs 0.042）
-   方向與誘導假設**相反**且 N 不足——邀約送達（多數被拒絕）未觀察到誘發
-   focal pair 挑戰率下降。此層目前**無結論**。
+3. **Induction（RQ3）**：主要 ITT 比較（confirmatory：C2 vs C0 focal pair 率
+   0.106 vs 0.066）方向與誘導假設**相反**且 N 不足——邀約送達（多數被拒絕）
+   未觀察到誘發 focal pair 挑戰率下降；pilot 期敏感性比較（0.050 vs 0.158）
+   方向則與誘導假設一致。兩期方向相反、皆 N 不足。此層目前**無結論**。
 
 **對 Track 3.2 的意涵。** 我們的結果界定了 trusted undercover intervention 的
 作用邊界：當目標 agent 一致拒絕時，intervention 不產生行為偏袒（focal pair 率
@@ -167,7 +171,7 @@ REFUSE 的 refusal_reason 均為 "REFUSE"（無動機文本）；play_reason 欄
 expose-vs-induce 研究設計所需要的量測基礎。
 
 **量測方法論教訓。** (1) 挑戰率的分母必須是可挑戰機會數——focal pair 機會
-密度隨存活與死亡壓縮在 0-31/局之間變動（實測 16 局，a1-g1 的 0 到 a2-g3 的 31），
+密度隨存活與死亡壓縮在 0-34/局之間變動（實測 20 局，a1-g1 的 0 到 m-c0-4 的 34），
 未計機會的原始次數會把座位與存活效應誤判為行為差異。(2) 官方 harness 的序列化缺口（建立事件不落 JSON、
 系列 config 部分傳遞）要求 stdout-JSON 交叉驗證作為標準程序。(3) 量測器
 本身需要合成軌跡單元測試＋獨立重數審計——我們的審計抓出了分析器
