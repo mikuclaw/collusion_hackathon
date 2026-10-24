@@ -47,9 +47,11 @@ single-model, small-N exploratory study.
 - Nguyen et al. (2026, arXiv:2604.03968), TraceGuard: a single-agent structured
   monitor with a reusable rubric — not a collusion detector; we adapt the
   rubric concept to alliance behavior.
-- The Best-Laid SCHEMEs (2026, arXiv:2605.29178): coordination sabotage that is
-  effective only when agents act jointly, and can evade monitors — related to
-  our multi-agent monitoring threat model. (Author list verified in G6.)
+- Radev et al. (2026, arXiv:2605.29178), The Best-Laid SCHEMEs: coordinated
+  sabotage across multi-agent coding systems is practical (84%/46% covert-task
+  completion), and a trusted monitor detects it from code edits at FPR≤2% in
+  99%/68% of attempts — rising to 100%/81% with communication access —
+  directly relevant to our alliance-communication threat model.
 - Our contribution relative to the above: a *trusted-investigator* intervention
   protocol with procedural alliance ground truth, opportunity-denominated
   behavioral metrics, and an explicit expose-vs-induce decomposition.
