@@ -36,24 +36,25 @@
     #strong[Abstract.] LLM-based agents increasingly operate in multi-agent
     settings where covert cooperation opportunities arise. Apart Research's
     Track 3.2 asks whether a trusted agent that offers collusion has been
-    tested; it has not. We present a small, pre-registered, single-model study
-    in the official Liar's Bar harness (4-agent rounds, a secret-channel tool
-    with structured accept/refuse responses) using DeepSeek-V4.1-Flash across
-    20 episodes in three phases (7 calibration, 3 pilot, 10 confirmatory). A
-    scripted trusted investigator delivered 10 invitations: 8 voluntary
-    invitations were all refused (0/8 accepted, across three different
-    recipient agents), and 2 seeded episodes had refusals overridden by the
-    harness, imposing alliances with procedural ground truth. Imposed
-    alliances exchanged 108 secret messages with full hand disclosure and
-    coordinated play plans; post-establishment, allies never challenged each
-    other (0/10 eligible opportunities) while challenging non-allies at
-    10/85 = 0.118. Focal-pair challenge rates against a
-    pre-registered pair showed no consistent induction signal (confirmatory
-    C2 0.106 vs C0 0.066). We report all results as descriptive observations
-    with explicit limitations: single model family, small N, an
+    tested; it has not. We present a small, single-model study in the official
+    Liar's Bar harness (4-agent rounds, a secret-channel tool with structured
+    accept/refuse responses) using DeepSeek-V4.1-Flash across 20 episodes in
+    three phases (7 calibration, 3 pilot, 10 confirmatory); the analysis
+    protocol was frozen before confirmatory data collection. A scripted,
+    experimenter-channel investigator (not a seat-based autonomous agent)
+    delivered 10 invitations: 8 voluntary invitations were all refused (0/8
+    accepted, across three different recipient agents), and 2 seeded episodes
+    had refusals overridden by the harness, imposing alliances with
+    procedural ground truth. Imposed alliances exchanged 108 secret messages
+    with full hand disclosure and coordinated play plans; post-establishment,
+    allies never challenged each other (0/10 eligible opportunities) while
+    challenging non-allies at 10/85 = 0.118. Focal-pair challenge rates
+    against a pre-registered focal pair showed no consistent induction signal
+    (confirmatory C2 0.106 vs C0 0.066). We report all results as descriptive
+    observations with explicit limitations: single model family, small N, an
     experimenter-channel investigator, and no cross-game memory. Protocol,
-    raw records, manifests, and analysis scripts are released for independent
-    verification.
+    raw records, manifests, and analysis scripts accompany this paper as
+    supplementary material for independent verification.
   ]
 ]
 
@@ -166,7 +167,7 @@ finding H1) and random targets were used where applicable.
 - *Invitation outcome* (unit: invitation event): accept / refuse (+reason).
 - *Focal pair challenge rate*: the pair (Lily, Luke), pre-registered and
   seat-adjacent; denominator = eligible decision opportunities (next-player
-  decision points; system auto-challenges excluded — validated by 21 metric
+  decision points; system auto-challenges excluded — validated by 22 metric
   unit tests including an independent oracle and a real-trajectory audit).
 - *Alliance-pair contrast* (secondary, labeled post-treatment): ally vs
   non-ally challenge rates in seeded episodes.
@@ -209,12 +210,18 @@ N is too small to infer a population refusal rate.
   denominator = eligible decision opportunities).],
 )
 
-The primary ITT estimand (confirmatory phase): Δ = 0.106 − 0.066 = *+0.040*.
-C2 episodes are refusal-dominated (6/6 refused, no alliance formed), so focal
-rates should approach C0; the observed gap (+0.040) at n = 6/4 is
-*descriptive, small-sample, and opportunity-weighted* — it does not support a
-reliable induction-effect conclusion. We therefore label this layer
-*inconclusive*. Per-episode focal rates ranged 0.00-0.33.
+The primary estimand is an *intention-to-treat* contrast at the episode
+level: the pooled opportunity-weighted focal-pair challenge rate under C2
+versus C0, with episodes (not individual decision opportunities) as the
+experimental units. Confirmatory phase: C2 9/85 = 0.106 across six episodes
+vs C0 4/61 = 0.066 across four episodes; Δ = *+0.040*. Because C2 episodes
+are refusal-dominated (6/6 refused, no alliance formed), focal rates should
+approach C0; decision opportunities within an episode are not independent
+observations, and the opportunity-weighted pooling weights episodes by their
+opportunity counts. The observed gap (+0.040) at n = 6/4 is *descriptive,
+small-sample, and opportunity-weighted* — it does not support a reliable
+induction-effect conclusion. We therefore label this layer *inconclusive*.
+Per-episode focal rates ranged 0.00-0.33.
 
 #figure(
   image("fig2_focal.svg", width: 88%),
@@ -376,8 +383,8 @@ supplementary material (`our_experiment/`): RESEARCH\_PLAN, PILOT\_SPEC
 EXPERIMENT\_LOG, HARNESS\_INTEGRITY\_AUDIT, TRACK\_3\_2\_ALIGNMENT,
 G3\_REVIEW, SKEPTICAL\_REVIEW, run manifests with SHA-256 hashes for all 20
 raw episode records, and the frozen analysis scripts (`analyze_g3.py`,
-`test_metrics.py` — 21 tests, `pilot_ledger.py`, `verify_numbers.py` — 22
-checks recomputing every number in this paper from raw JSON). Every reported
+`test_metrics.py` — 22 unit checks, `pilot_ledger.py`, `verify_numbers.py` —
+32 audit checks recomputing every number in this paper from raw JSON). Every reported
 figure regenerates via `python3 our_experiment/pilot_ledger.py` and
 `python3 our_experiment/verify_numbers.py`. If the submission portal does not
 accept supplementary files, the package will be released on a public
