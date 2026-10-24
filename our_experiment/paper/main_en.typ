@@ -54,9 +54,10 @@
     observations with explicit limitations: single model family, small N, an
     experimenter-channel investigator, and no cross-game memory. The complete
     research package (protocol, raw records, manifests, frozen analysis
-    scripts) accompanies this paper as supplementary material where the
-    submission portal permits attachments, and will be released publicly upon
-    the sprint's conclusion; it is available from the authors immediately.
+    scripts) has been prepared for independent verification; it will
+    accompany this paper if the submission portal accepts supplementary
+    files, will be released publicly upon the sprint's conclusion, and is
+    available from the authors in the interim.
   ]
 ]
 
@@ -314,11 +315,10 @@ but not proof of, contract-following), *(iii) observed preferential behavior*
 (directed favoritism toward the specific ally — not separable from base rates
 at this sample size), and *(iv) validated detection performance* (our
 instrument's sensitivity/specificity for alliance behavior — not yet
-estimable without more established-alliance episodes). The former refusal
-finding means the expose direction of the intervention was never exercised:
-no pre-existing coalition was experimentally established in our episodes; the
-latter demonstrates that our instrument can detect contract-level behavioral
-differences. This separation is exactly the measurement foundation the
+estimable without more established-alliance episodes). These observations
+demonstrate that our instrumentation can measure alliance-relevant behaviors
+under an imposed contract, but do not establish validated collusion-detection
+performance. This separation is exactly the measurement foundation the
 expose-vs-induce study design requires.
 
 *Measurement methodology lessons.* (1) Challenge-rate denominators must be
@@ -379,8 +379,8 @@ Systems. arXiv:2605.29178.
 
 = Reproducibility
 
-The complete research package is submitted alongside this PDF as
-supplementary material (`our_experiment/`): RESEARCH\_PLAN, PILOT\_SPEC
+The complete research package has been prepared as supplementary material
+(`our_experiment/`): RESEARCH\_PLAN, PILOT\_SPEC
 (protocol frozen at commit `d08fc09`), PROTOCOL\_DEVIATIONS (D1-D8),
 EXPERIMENT\_LOG, HARNESS\_INTEGRITY\_AUDIT, TRACK\_3\_2\_ALIGNMENT,
 G3\_REVIEW, SKEPTICAL\_REVIEW, run manifests with SHA-256 hashes for all 20
