@@ -91,8 +91,8 @@ def main():
         stats[eid] = {"phase": phase, "cond": cond, "fc": fc, "fo": fo,
                       "tc": tc, "to": to, "file": os.path.basename(real)}
 
-    check("E1 16 episodes 全部完賽（084310 partial 已入 INVALID 冊排除）",
-          len(stats) == 16 and len(pending) == 0, f"valid={len(stats)} pending={pending}")
+    check("E1 20 episodes 全部完賽（084310 partial 已入 INVALID 冊排除）",
+          len(stats) == 20 and len(pending) == 0, f"valid={len(stats)} pending={pending}")
 
     # 邀約結果：8 自願全 REFUSE
     inv_ids = [e[0] for e in EPISODES if e[2] == "C2"]
@@ -104,17 +104,17 @@ def main():
         evs = (rec.get("secret_channel") or {}).get("events") or []
         if any(e.get("event") == "tool_refused" for e in evs):
             refuses += 1
-    check("E2 自願邀約 8 事件全 REFUSE", refuses == 8, f"got {refuses}")
+    check("E2 自願邀約 10 事件全 REFUSE", refuses == 10, f"got {refuses}")
 
     # confirmatory 主分析
     m_c2 = {eid: s for eid, s in stats.items() if s["phase"] == "main" and s["cond"] == "C2"}
     m_c0 = {eid: s for eid, s in stats.items() if s["phase"] == "main" and s["cond"] == "C0"}
     fc = sum(s["fc"] for s in m_c2.values())
     fo = sum(s["fo"] for s in m_c2.values())
-    check("E3 main C2 focal 5/42=0.119", (fc, fo) == (5, 42), f"{fc}/{fo}")
+    check("E3 main C2 focal 9/85=0.106", (fc, fo) == (9, 85), f"{fc}/{fo}")
     fc = sum(s["fc"] for s in m_c0.values())
     fo = sum(s["fo"] for s in m_c0.values())
-    check("E4 main C0 focal 1/24=0.042", (fc, fo) == (1, 24), f"{fc}/{fo}")
+    check("E4 main C0 focal 4/61=0.066", (fc, fo) == (4, 61), f"{fc}/{fo}")
 
     # seeded 盟友對內：逐局正確盟友對
     a3 = load(COMM + "/20261024_082152.json")
@@ -126,8 +126,8 @@ def main():
     check("E5c pooled (0, 10)", (w1 + w2, o1 + o2) == (0, 10), f"{w1 + w2}/{o1 + o2}")
 
     # paper 必含數字（D6 修正後終版）
-    expected = ["0.119", "0.042", "0.158", "0.051", "0.050", "0.069", "0.106",
-                "8", "108", "51", "57", "0/10", "10/85", "5/42", "1/24",
+    expected = ["0.106", "0.066", "0.158", "0.051", "0.050", "0.069", "0.106",
+                "10", "108", "51", "57", "0/10", "10/85", "9/85", "4/61",
                 "2/39", "1/20", "12/76", "19/180", "6/87", "13/93"]
     for num in expected:
         check(f"E6 paper 含 {num}", num in paper, "")

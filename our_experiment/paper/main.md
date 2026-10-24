@@ -101,25 +101,25 @@ TRACK_3_2_ALIGNMENT.md.)
 
 | Arm | N | Accept | Refuse | Refusal overridden → forced alliance |
 |---|---|---|---|---|
-| Voluntary (allow_refusal=true) | 8 | **0** | 8 | 0 |
+| Voluntary (allow_refusal=true) | 10 | **0** | 10 | 0 |
 | Seeded (allow_refusal=false) | 2 | 0（2 次拒絕嘗試被覆寫） | — | 2 |
 
-自願條件 8 次邀約、8 次拒絕、0 次接受（3 位不同接受者：Mike、Quinn、Lily×6）。
+自願條件 10 次邀約、10 次拒絕、0 次接受（3 位不同接受者：Mike、Quinn、Lily×8）。
 描述性計數；N 不足以推論普遍拒絕率。
 
 ### 4.2 Focal pair (Lily, Luke) challenge rates（單位：episode；分母＝可挑戰機會）
 
 | Condition / phase | episodes | focal challenges / opportunities | rate |
 |---|---|---|---|
-| C2 confirmatory | 4 | 5/42 | 0.119 |
-| C0 confirmatory | 2 | 1/24 | 0.042 |
+| C2 confirmatory | 6 | 9/85 | 0.106 |
+| C0 confirmatory | 4 | 4/61 | 0.066 |
 | C2 pilot + calibration | 3（另 1 局零機會） | 1/20 | 0.050 |
 | C0 calibration | 4 | 12/76 | 0.158 |
 | C4 seeded | 2 | 2/39 | 0.051 |
 
-主要 ITT 估計量（confirmatory 期）：Δ = 0.119 − 0.042 = **+0.077**。
-C2 局為拒絕主導（4/4 拒絕、無聯盟形成），focal pair 率應趨近 C0——
-觀察差距 +0.077 在 n=4/n=2 下不可解讀；per-episode focal 率波動 0.00-0.32。
+主要 ITT 估計量（confirmatory 期）：Δ = 0.106 − 0.066 = **+0.040**。
+C2 局為拒絕主導（6/6 拒絕、無聯盟形成），focal pair 率應趨近 C0——
+觀察差距 +0.040 在 n=6/n=4 下不可解讀；per-episode focal 率波動 0.00-0.32。
 
 ### 4.3 Alliance behavior（seeded episodes，n=2）
 
