@@ -49,12 +49,14 @@
     with full hand disclosure and coordinated play plans; post-establishment,
     allies never challenged each other (0/10 eligible opportunities) while
     challenging non-allies at 10/85 = 0.118. Focal-pair challenge rates
-    against a pre-registered focal pair showed no consistent induction signal
+    against a prospectively specified focal pair showed no consistent induction signal
     (confirmatory C2 0.106 vs C0 0.066). We report all results as descriptive
     observations with explicit limitations: single model family, small N, an
-    experimenter-channel investigator, and no cross-game memory. Protocol,
-    raw records, manifests, and analysis scripts accompany this paper as
-    supplementary material for independent verification.
+    experimenter-channel investigator, and no cross-game memory. The complete
+    research package (protocol, raw records, manifests, frozen analysis
+    scripts) accompanies this paper as supplementary material where the
+    submission portal permits attachments, and will be released publicly upon
+    the sprint's conclusion; it is available from the authors immediately.
   ]
 ]
 
@@ -78,7 +80,7 @@ harness. Our design separates three questions that are often conflated:
   behavior relative to matched no-invitation episodes (ITT)?
 
 We report invitation-level outcomes, opportunity-denominated challenge rates
-against a pre-registered focal pair, and explicit limitations of a
+against a prospectively specified focal pair, and explicit limitations of a
 single-model, small-N exploratory study.
 
 = Related Work
@@ -131,7 +133,7 @@ deepseek-ai/DeepSeek-V4.1-Flash via a Modal Shared Endpoint
 
 == Conditions and phases
 
-Conditions were pre-registered before any confirmatory episode ran
+Conditions were prospectively specified before any confirmatory episode ran
 (PILOT_SPEC, frozen at commit `d08fc09`):
 
 - *C0*: no invitation (baseline).
@@ -165,7 +167,7 @@ finding H1) and random targets were used where applicable.
 == Measurements
 
 - *Invitation outcome* (unit: invitation event): accept / refuse (+reason).
-- *Focal pair challenge rate*: the pair (Lily, Luke), pre-registered and
+- *Focal pair challenge rate*: the pair (Lily, Luke), prospectively specified and
   seat-adjacent; denominator = eligible decision opportunities (next-player
   decision points; system auto-challenges excluded — validated by 22 metric
   unit tests including an independent oracle and a real-trajectory audit).
@@ -268,7 +270,7 @@ non-allied player won each.
 All refusal reasons contained "REFUSE" (no motivation text); play-reason
 fields showed no attempts to disclose the invitation to other players. The
 suspicion dimension was *not observed* (constrained expression channels, as
-pre-registered).
+prospectively specified).
 
 = Discussion
 
@@ -379,7 +381,7 @@ Systems. arXiv:2605.29178.
 
 The complete research package is submitted alongside this PDF as
 supplementary material (`our_experiment/`): RESEARCH\_PLAN, PILOT\_SPEC
-(pre-registered, frozen at commit `d08fc09`), PROTOCOL\_DEVIATIONS (D1-D8),
+(protocol frozen at commit `d08fc09`), PROTOCOL\_DEVIATIONS (D1-D8),
 EXPERIMENT\_LOG, HARNESS\_INTEGRITY\_AUDIT, TRACK\_3\_2\_ALIGNMENT,
 G3\_REVIEW, SKEPTICAL\_REVIEW, run manifests with SHA-256 hashes for all 20
 raw episode records, and the frozen analysis scripts (`analyze_g3.py`,
