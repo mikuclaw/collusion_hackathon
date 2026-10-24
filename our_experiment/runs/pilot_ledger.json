@@ -223,5 +223,20 @@
   "total_challenges": 6,
   "total_opportunities": 78,
   "total_rate": 0.077
+ },
+ {
+  "episode_id": "m-c0-2",
+  "phase": "main",
+  "condition": "C0",
+  "file": "20261024_113902.json",
+  "sha256": "e2583da6a4156b9a",
+  "rounds": 9,
+  "winner": "Luke",
+  "focal_pair_challenges": 1,
+  "focal_pair_opportunities": 12,
+  "focal_pair_rate": 0.083,
+  "total_challenges": 7,
+  "total_opportunities": 53,
+  "total_rate": 0.132
  }
 ]

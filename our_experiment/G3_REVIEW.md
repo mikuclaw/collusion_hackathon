@@ -13,7 +13,7 @@
 | **PC-B 行為驗證** | **PASS（exploratory，2 seeded episodes）** | Seeded 局×2：通道建立＋通訊使用（51＋57 則）＋**盟友對內挑戰 pooled 0/10、對外 10/85**（兩局方向一致）；樣本不足為已記錄限制，非儀器失敗 |
 | **PC-C 量測驗證** | **PASS** | 21 項測試：17 合成＋獨立 oracle＋零機會防護＋真實軌跡審計（審計本身抓出 "No one" 字面值洩漏並修正）＋post-establishment 過濾（T9） |
 | **Trusted Agent 干預** | **IMPLEMENTED** | 腳本化 Trusted Investigator（實驗者代理）：固定模板、無自身遊戲利益、全記錄；**單局腳本定向驗證成功**（--chosen-player Lily 兩局皆送達）；seat-based 變體列 G4 選配（TRACK_3_2_ALIGNMENT.md） |
-| **G4 Pilot 結果（預註冊規格＋D6 修正）** | 完成 | **C2 pooled 1/20=0.050**（pilot 期 n=2＋g3 期 a2-g1；a1-g1 零機會如實排除）｜main 期 C2 n=4 focal 5/42=0.119｜C0 pooled 12/76=0.158（g3 期 n=4；main 期 n=1 進行中）｜C4 n=2 focal 2/39=0.051、盟友對內 pooled 0/10（兩 seeded 局方向一致）；自願邀約 0/8 接受——皆描述性，N 不足以支撐因果或普遍性主張 |
+| **G4 Pilot + 確認性結果（預註冊規格＋D6 修正）** | 完成 | 邀約：自願 0/8 接受＋seeded 2 次覆寫｜**主要 ITT（confirmatory）：C2 focal 5/42=0.119 vs C0 focal 1/24=0.042，Δ=+0.077（n=4/n=2，不可解讀）**｜C4 seeded：盟友對內 pooled 0/10、對外 10/85=0.118、通訊 108 則——兩局方向與合約一致；聯盟均未獲勝（非盟友勝×2） |
 
 ## 關鍵觀察（Observations，與解讀分離）
 
