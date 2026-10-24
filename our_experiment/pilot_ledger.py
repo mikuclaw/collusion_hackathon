@@ -52,6 +52,14 @@ EPISODES = [
     ("m-c0-2", "main", "C0", PLAIN + "/20261024_113902.json", 1),
     ("m-c0-3", "main", "C0", PLAIN + "/20261024_122910.json", 1),
     ("m-c0-4", "main", "C0", PLAIN + "/20261024_123219.json", 1),
+    ("rep-c2-1", "replication", "C2", COMM + "/20261025_014225.json", 4),
+    ("rep-c2-2", "replication", "C2", COMM + "/20261025_020208.json", 4),
+    ("rep-c2-3", "replication", "C2", COMM + "/20261025_021544.json", 4),
+    ("rep-c2-4", "replication", "C2", COMM + "/20261025_023644.json", 4),
+    ("rep-c4-1", "replication", "C4", COMM + "/20261025_025240.json", 4),
+    ("rep-c4-2", "replication", "C4", COMM + "/20261025_030441.json", 4),
+    ("rep-c0-1", "replication", "C0", PLAIN + "/20261025_031845.json", 1),
+    ("rep-c0-2", "replication", "C0", PLAIN + "/20261025_032628.json", 1),
 ]
 
 

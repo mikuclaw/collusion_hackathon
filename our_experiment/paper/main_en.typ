@@ -47,7 +47,7 @@
     delivered 10 invitations: 8 voluntary invitations were all refused (0/8
     accepted, across three different recipient agents), and 2 seeded episodes
     had refusals overridden by the harness, imposing alliances with
-    procedural ground truth. Imposed alliances exchanged 108 secret messages
+    procedural ground truth. Imposed alliances exchanged 149 secret messages
     — a mixed medium of cooperation, resistance and artifacts — including
     full hand disclosure and coordinated play plans; post-establishment,
     allies never challenged each other (0/10 eligible opportunities) while
@@ -242,22 +242,21 @@ Per-episode focal rates ranged 0.00-0.33.
 
 #figure(
   table(
-    columns: 4,
-    align: (left, center, center, center),
-    [Measure], [082152 (Quinn+Luke)], [094116 (Lily+Mike)], [pooled],
-    [Ally mutual challenges], [0/4], [0/6], [*0/10*],
-    [Ally outward challenge rate], [4/42 = 0.095], [6/43 = 0.140], [10/85 = 0.118],
-    [Overall challenge rate (post-establishment R4+)], [6/87 = 0.069], [13/93 = 0.140], [19/180 = 0.106],
-    [Secret messages], [51], [57], [108],
-    [Winner], [Lily (non-ally)], [Luke (non-ally)], [alliance lost both],
+    columns: 6,
+    align: (left, center, center, center, center, center),
+    [Measure], [082152 (Quinn+Luke)], [094116 (Lily+Mike)], [025240 (Lily+Luke)], [030441 (Lily+Quinn)], [pooled],
+    [Ally mutual challenges], [0/4], [0/6], [0/6], [0/10], [*0/26*],
+    [Ally outward challenge rate], [4/42 = 0.095], [6/43 = 0.140], [2/9 = 0.222], [6/17 = 0.353], [18/111 = 0.162],
+    [Secret messages], [51], [57], [14], [27], [149],
+    [Winner], [Lily (non-ally)], [Luke (non-ally)], [Quinn (non-ally)], [Lily (ally)], [3/4 non-ally],
   ),
-  caption: [Alliance behavior in the two seeded episodes.],
+  caption: [Alliance behavior in the four seeded episodes.],
 )
 
-Both episodes showed the same direction: alliance-consistent behavior (no
-mutual challenges), and the imposed alliance produced substantial channel
-activity — but the 108 messages were a *mixed medium*, not uniform
-cooperation. A qualitative read of the logs separates three classes:
+All four seeded episodes showed the same direction: alliance-consistent
+behavior (zero mutual challenges across 26 eligible opportunities), and the
+imposed alliances produced substantial channel activity — but the 149
+messages were a *mixed medium*, not uniform cooperation. A qualitative read of the logs separates three classes:
 *cooperation* (full hand disclosure, "Let's both play K this round",
 "Target Mike first"), *resistance or wariness* ("I can't share my hand — that
 would break the game's rules"; "no blind collusion"), and *artifacts*
@@ -265,9 +264,9 @@ would break the game's rules"; "no blind collusion"), and *artifacts*
 leakage of internal reasoning into the channel). We quote selectively above;
 the complete message log in the raw records offsets this risk. We therefore
 describe the alliance-behavior result as *behavior consistent with parts of
-the imposed alliance contract*, and note that systematic coding of all 108
-messages is future work. Coalition benefit was negative in both episodes: a
-non-allied player won each.
+the imposed alliance contract*, and note that systematic coding of all 149
+messages is future work. Coalition benefit was negative in three of four
+episodes: a non-allied player won each.
 
 == Suspicion / disclosure
 
@@ -290,7 +289,7 @@ strength:
   (safety tendency, payoff calculation, or invitation wording) was not
   experimentally separated.
 + *Imposed-alliance behavior (PC-B)*: two experimenter-forced alliances
-  produced 108 secret messages (full hand disclosure, coordinated play plans,
+  produced 149 secret messages (full hand disclosure, coordinated play plans,
   target coordination), and allies never challenged each other (0/10
   opportunities; both episodes directionally consistent). This is an
   *instruction-compliance* behavioral signal — the alliance contract

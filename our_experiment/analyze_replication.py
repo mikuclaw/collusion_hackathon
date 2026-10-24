@@ -60,12 +60,13 @@ def ally_rates(rec, min_round, ally):
 
 def main():
     # 1) 從 log 歸屬紀錄檔
-    mapping = []  # (batch, condition, log_file, record_id, partner)
+    mapping = []  # (name, condition, record_id, partner)
+    rep_c2, rep_c0, rep_c4 = [], [], []
     for logf in sorted(glob.glob(LOGS + "/rep_*.log")):
         name = os.path.basename(logf).replace(".log", "")
         cond = name.rsplit("_", 1)[0]
         text = open(logf, encoding="utf-8", errors="ignore").read()
-        saved = re.findall(r"saved to \S*?/(\d{8}_\d{6})\.json", text)
+        saved = re.findall(r"saved(?: automatically)? to \S*?/(\d{8}_\d{6})\.json", text)
         partner_m = re.search(r"forcing partner (\w+)", text)
         offered_m = re.search(r"SECRET TOOL OFFERED TO (\w+)", text)
         if saved:
@@ -75,12 +76,14 @@ def main():
         else:
             print(f"[WARN] {name}: log 無存檔行（未完賽或失敗）")
 
-    print(f"歸屬成功: {len(mapping)} 局")
-    c4_partners = {}
+    # C0 紀錄：plain game.py 不印存檔行——以 batch 時間窗（10/25 03:00-04:00）自 plain 目錄定位
+    c0_records = sorted(glob.glob(PLAIN + "/20261025_03*.json"))
+    for idx, f in enumerate(c0_records[:2], 1):
+        mapping.append((f"rep_c0_{idx}", "rep_c0", os.path.basename(f).replace(".json", ""), None, None))
+
+    print(f"歸屬成功: {len(mapping)} 局（含 C0 由時間窗定位 {len(c0_records)} 局）")
 
     inv_accept = inv_refuse = 0
-    rep_c2 = []
-    rep_c0 = []
     ally_totals = [0, 0, 0, 0]  # wc, wo, oc, oo
 
     for name, cond, rid, partner, offered in mapping:
@@ -110,7 +113,6 @@ def main():
                 ally_totals[2] += oc; ally_totals[3] += oo
                 rep_c4.append((rid, ally, wc, wo, oc, oo, len(rec.get("rounds", [])),
                                rec.get("winner")))
-                c4_partners[rid] = ally
 
     print(f"\n== F1 自願邀約（複現批 n={inv_accept + inv_refuse}）==")
     print(f"  accept={inv_accept} refuse={inv_refuse}"
