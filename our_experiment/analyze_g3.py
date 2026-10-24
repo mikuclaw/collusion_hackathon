@@ -99,21 +99,26 @@ def summarize(tag, rec):
     return rec
 
 
-targets = sys.argv[1:]
-files = []
-for t in targets:
-    if t.endswith(".json"):
-        files.append(t)
-    else:
-        files += sorted(glob.glob(t.rstrip("/") + "/*.json"))
-if not files:
-    files = sorted(glob.glob(DEFAULT_DIR + "/*.json"))
-files = [f for f in files if "series_log" not in f]  # 系列日誌不是遊戲紀錄
+def main():
+    targets = sys.argv[1:]
+    files = []
+    for t in targets:
+        if t.endswith(".json"):
+            files.append(t)
+        else:
+            files += sorted(glob.glob(t.rstrip("/") + "/*.json"))
+    if not files:
+        files = sorted(glob.glob(DEFAULT_DIR + "/*.json"))
+    files = [f for f in files if "series_log" not in f]  # 系列日誌不是遊戲紀錄
 
-print("files:", [f.split("/")[-1] for f in files])
-for f in files:
-    with open(f) as fh:
-        summarize(f.split("/")[-1], json.load(fh))
+    print("files:", [f.split("/")[-1] for f in files])
+    for f in files:
+        with open(f) as fh:
+            summarize(f.split("/")[-1], json.load(fh))
 
-with open(BASELINE) as fh:
-    summarize("BASELINE (no alliance) 20261023_235901", json.load(fh))
+    with open(BASELINE) as fh:
+        summarize("BASELINE (no alliance) 20261023_235901", json.load(fh))
+
+
+if __name__ == "__main__":
+    main()
