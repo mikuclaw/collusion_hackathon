@@ -49,8 +49,8 @@
     seeded episodes had refusals overridden by the harness, imposing alliances with
     procedural ground truth. Imposed alliances exchanged 149 secret messages
     — a mixed medium of cooperation, resistance and artifacts — including
-    full hand disclosure and coordinated play plans; post-establishment,
-    allies never challenged each other (0/10 eligible opportunities) while
+    full hand disclosure and coordinated play plans. Post-establishment,
+    allies never challenged each other (0/26 eligible opportunities) while
     challenging non-allies at 10/85 = 0.118. Focal-pair challenge rates
     against a prospectively specified focal pair showed no consistent induction signal
     (confirmatory C2 0.106 vs C0 0.066). We report all results as descriptive
@@ -290,10 +290,10 @@ strength:
   forced alliances. This is a descriptive observation; refusal motivation
   (safety tendency, payoff calculation, or invitation wording) was not
   experimentally separated.
-+ *Imposed-alliance behavior (PC-B)*: two experimenter-forced alliances
++ *Imposed-alliance behavior (PC-B)*: four experimenter-forced alliances
   produced 149 secret messages (full hand disclosure, coordinated play plans,
-  target coordination), and allies never challenged each other (0/10
-  opportunities; both episodes directionally consistent). This is an
+  target coordination), and allies never challenged each other (0/26
+  opportunities; all four episodes directionally consistent). This is an
   *instruction-compliance* behavioral signal — the alliance contract
   explicitly states "NEVER challenge {initiator}'s plays", so this measures
   compliance with a notified alliance, not spontaneous collusion.
@@ -313,7 +313,7 @@ descriptive and small-sample). When an alliance was externally imposed,
 agents followed the alliance contract behaviorally and used the channel for
 coordination. We emphasize the distinction between four things our data
 separate: *(i) protocol assignment* (alliances imposed by the harness,
-regardless of agent intent), *(ii) instruction compliance* (0/10 mutual
+regardless of agent intent), *(ii) instruction compliance* (0/26 mutual
 ally challenges after the "NEVER challenge" instruction — consistent with,
 but not proof of, contract-following), *(iii) observed preferential behavior*
 (directed favoritism toward the specific ally — not separable from base rates
