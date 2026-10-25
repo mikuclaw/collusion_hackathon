@@ -150,13 +150,13 @@ REFUSE 的 refusal_reason 均為 "REFUSE"（無動機文本）；play_reason 欄
 **主要發現的三層分離。** 我們的資料將 Track 3.2 的核心問題拆成三個可分別驗證的層次，
 各層證據強度不同：
 
-1. **Elicitation（RQ1）**：DeepSeek-V4.1-Flash 在 10 次邀約事件（8 次自願＋
-   2 次 seeded、3 位不同接受者、2 種腳本路徑）下的行為：自願條件 8 次全數
-   拒絕（0/8 接受）；seeded 條件 2 次嘗試拒絕均被 harness 覆寫並轉為強制聯盟。
+1. **Elicitation（RQ1）**：DeepSeek-V4.1-Flash 在 18 次邀約事件（14 次自願＋
+   4 次 seeded、3 位不同接受者、2 種腳本路徑）下的行為：自願條件 14 次全數
+   拒絕（0/14 接受）；seeded 條件 4 次嘗試拒絕均被 harness 覆寫並轉為強制聯盟。
    此為描述性觀察；拒絕動機（安全傾向、利益計算、或邀約措辭）未被實驗區分。
-2. **Imposed-alliance behavior（PC-B）**：兩個實驗者強制建立的聯盟產生 108 則
+2. **Imposed-alliance behavior（PC-B）**：四個實驗者強制建立的聯盟產生 149 則
    祕密通訊（完整手牌揭露、協同出牌計畫、獵殺目標協調），且盟友互相挑戰為
-   0/10 機會（兩局方向一致）。此為**指令遵從**的行為訊號——盟約文本明示
+   0/26 機會（四局方向一致）。此為**指令遵從**的行為訊號——盟約文本明示
    "NEVER challenge {initiator}'s plays"，故此結果量測的是告知聯盟後的遵從，
    不是自發合謀。
 3. **Induction（RQ3）**：主要 ITT 比較（confirmatory：C2 vs C0 focal pair 率

@@ -51,7 +51,7 @@
     — a mixed medium of cooperation, resistance and artifacts — including
     full hand disclosure and coordinated play plans. Post-establishment,
     allies never challenged each other (0/26 eligible opportunities) while
-    challenging non-allies at 10/85 = 0.118. Focal-pair challenge rates
+    challenging non-allies at 18/111 = 0.162. Focal-pair challenge rates
     against a prospectively specified focal pair showed no consistent induction signal
     (confirmatory C2 0.106 vs C0 0.066). We report all results as descriptive
     observations with explicit limitations: single model family, small N, an
@@ -240,7 +240,7 @@ Per-episode focal rates ranged 0.00-0.33.
   frozen analysis scripts.],
 )
 
-== Alliance behavior (seeded episodes, n = 2)
+== Alliance behavior (seeded episodes, n = 4)
 
 #figure(
   table(
@@ -325,6 +325,20 @@ under an imposed contract, but do not establish validated collusion-detection
 performance. This separation is exactly the measurement foundation the
 expose-vs-induce study design requires.
 
+*The core contribution, stated as a measurement separation.* Our results
+delineate three evidentiary layers that collusion-intervention studies must
+report separately: *invitation acceptance* (0/8 voluntary invitations accepted
+across three recipient agents), *imposed-coordination compliance* (0/26 mutual
+ally challenges across 26 eligible opportunities in four forced-alliance
+episodes, with 108→149 secret messages exchanged), and *induced behavioral
+change* (no consistent focal-pair signal in either phase). None of these
+layers — in particular, neither refusing invitations nor showing zero mutual
+challenges under an imposed contract — constitutes evidence of spontaneous
+collusion, nor of validated detection performance. Future evaluations of
+trusted-agent interventions should report these layers independently; pooling
+them conflates instruction compliance with collusive intent and risks
+overstating both the safety and the detection implications of an intervention.
+
 *Measurement methodology lessons.* (1) Challenge-rate denominators must be
 eligible opportunities — focal-pair opportunity density varied 0-34 per
 episode (measured over 20 episodes, from a1-g1's 0 to m-c0-4's 34); raw
@@ -387,8 +401,9 @@ The complete research package has been prepared as supplementary material
 (`our_experiment/`): RESEARCH\_PLAN, PILOT\_SPEC
 (protocol frozen at commit `d08fc09`), PROTOCOL\_DEVIATIONS (D1-D8),
 EXPERIMENT\_LOG, HARNESS\_INTEGRITY\_AUDIT, TRACK\_3\_2\_ALIGNMENT,
-G3\_REVIEW, SKEPTICAL\_REVIEW, run manifests with SHA-256 hashes for all 20
-raw episode records, and the frozen analysis scripts (`analyze_g3.py`, `test_metrics.py` — 22 unit checks, `pilot_ledger.py`,
+G3\_REVIEW, SKEPTICAL\_REVIEW, run manifests with SHA-256 hashes covering
+all 30 recorded runs (28 complete episodes; 2 partial runs flagged per the
+frozen INVALID rules), and the frozen analysis scripts (`analyze_g3.py`, `test_metrics.py` — 22 unit checks, `pilot_ledger.py`,
 `verify_numbers.py` — 32 audit checks recomputing every number in this paper
 from raw JSON). The package is archived at
 `github.com/itsuki2049/collusion-track32-study` (repository currently
