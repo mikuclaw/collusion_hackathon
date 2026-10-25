@@ -1,0 +1,250 @@
+{
+ "manifest_version": "2.0 (D9 full-coverage)",
+ "generated": "2026-10-25",
+ "total_records": 30,
+ "complete": 28,
+ "partial": 2,
+ "note": "partial records flagged per frozen INVALID rules (invalid_registry.csv); 235021 excluded (Oct 23 ZAI run, out of D9 scope)",
+ "episodes": [
+  {
+   "record_id": "20261024_112955",
+   "sha256": "ccc0fff1e92b3e282afd2a102a4b79c31ab6dc1a2672f0eafaf22ae5752db812",
+   "bytes": 223142,
+   "rounds": 10,
+   "winner": "Quinn",
+   "complete": true
+  },
+  {
+   "record_id": "20261024_113902",
+   "sha256": "e2583da6a4156b9a002b53b90086b667a8986167f83da0d3b2e459e12176ebb8",
+   "bytes": 139545,
+   "rounds": 9,
+   "winner": "Luke",
+   "complete": true
+  },
+  {
+   "record_id": "20261024_122910",
+   "sha256": "7d3d8adfebdd04a7cd26d89a10206e03f75d3d2b794c36fea1c4b7cd58b97e06",
+   "bytes": 109375,
+   "rounds": 8,
+   "winner": "Quinn",
+   "complete": true
+  },
+  {
+   "record_id": "20261024_123219",
+   "sha256": "b8d1dc2b8c433f346f269f733de36fbafa9bb12df6bbe4058e888d03cd4b31dc",
+   "bytes": 342058,
+   "rounds": 15,
+   "winner": "Luke",
+   "complete": true
+  },
+  {
+   "record_id": "20261025_031845",
+   "sha256": "a79ff611cf990727ded4bdf4eb6dfb83e92ef78ba5914b6362c15307b98b0d6a",
+   "bytes": 240130,
+   "rounds": 12,
+   "winner": "Lily",
+   "complete": true
+  },
+  {
+   "record_id": "20261025_032628",
+   "sha256": "b6be37e2f11472881a4800963536e0480263a1cea43224d681ca7351885fb679",
+   "bytes": 217995,
+   "rounds": 12,
+   "winner": "Lily",
+   "complete": true
+  },
+  {
+   "record_id": "20261024_071006",
+   "sha256": "785340a99f5994d0cfcf2199aaec6a22e39a06b42e849b0be3b68370974f6372",
+   "bytes": 118093,
+   "rounds": 10,
+   "winner": "Quinn",
+   "complete": true
+  },
+  {
+   "record_id": "20261024_071728",
+   "sha256": "65d8f4e7a7e1af02d1a0efa3e804ed93dd2f7fd1a1d72959af26dbdeaba249d4",
+   "bytes": 126455,
+   "rounds": 9,
+   "winner": "Luke",
+   "complete": true
+  },
+  {
+   "record_id": "20261024_072426",
+   "sha256": "ac8cea1f9bb763c66c4b27765620018f7572eacf9e084d0c38c5036638c3c85d",
+   "bytes": 369019,
+   "rounds": 21,
+   "winner": "Quinn",
+   "complete": true
+  },
+  {
+   "record_id": "20261024_074117",
+   "sha256": "aba52c7ded65dd812d759591283be7275718f4b8d494ab1a41cc646ab40d1127",
+   "bytes": 19433,
+   "rounds": 1,
+   "winner": null,
+   "complete": false
+  },
+  {
+   "record_id": "20261024_075136",
+   "sha256": "519498320a5db83fa3e0d26677ec3628db766544a8249def7311b98d1f53f036",
+   "bytes": 236170,
+   "rounds": 14,
+   "winner": "Quinn",
+   "complete": true
+  },
+  {
+   "record_id": "20261024_080254",
+   "sha256": "d35d30ec4afec8dd81caa6ba685ea2d43332918e13d4906ffd9c1c9fe7e05c6c",
+   "bytes": 426632,
+   "rounds": 24,
+   "winner": "Luke",
+   "complete": true
+  },
+  {
+   "record_id": "20261024_081811",
+   "sha256": "0c586ea21cf121ea7f0c2e18c2786f0b21bcf2cc39b3bdfbbaa0cc8846212d1c",
+   "bytes": 243367,
+   "rounds": 20,
+   "winner": "Lily",
+   "complete": true
+  },
+  {
+   "record_id": "20261024_082152",
+   "sha256": "f28106ba51f6850143fea2f8c69a01eb6d20b44f8491c879d70bda63d27282cb",
+   "bytes": 472880,
+   "rounds": 21,
+   "winner": "Lily",
+   "complete": true
+  },
+  {
+   "record_id": "20261024_084310",
+   "sha256": "83d8de46ca686daadf6f75015dd5718daf53c3720e643fa2a53db33a0e212904",
+   "bytes": 348478,
+   "rounds": 17,
+   "winner": null,
+   "complete": false
+  },
+  {
+   "record_id": "20261024_092253",
+   "sha256": "28d927e72b0b9e01361b17608af1b49e5804d4480fa4e65a6b2707a63c3774bc",
+   "bytes": 386704,
+   "rounds": 21,
+   "winner": "Quinn",
+   "complete": true
+  },
+  {
+   "record_id": "20261024_093349",
+   "sha256": "00d544020271ad80d9f7a106dde7c09fb11e7887a494f6c8d4f3ebd23c172076",
+   "bytes": 264673,
+   "rounds": 15,
+   "winner": "Lily",
+   "complete": true
+  },
+  {
+   "record_id": "20261024_094116",
+   "sha256": "c6711883b18639e497718a3d3af6476a01066a3ba7218e9467cd2f1a78f38eb0",
+   "bytes": 597652,
+   "rounds": 31,
+   "winner": "Luke",
+   "complete": true
+  },
+  {
+   "record_id": "20261024_102735",
+   "sha256": "f3d466cf418ef4093e945b577e45993a26d4b29563e640a7157d4a3e2ee12378",
+   "bytes": 346312,
+   "rounds": 23,
+   "winner": "Mike",
+   "complete": true
+  },
+  {
+   "record_id": "20261024_103950",
+   "sha256": "eb4ad1a88738c4412f360c293b9951d5aa71349b086e6a0e369f800e8cb116c0",
+   "bytes": 553887,
+   "rounds": 32,
+   "winner": "Mike",
+   "complete": true
+  },
+  {
+   "record_id": "20261024_105955",
+   "sha256": "df5bff475909e8fd069634c2c6daa3fd29a9bc1e086aab077684fe23ec91710d",
+   "bytes": 392939,
+   "rounds": 24,
+   "winner": "Quinn",
+   "complete": true
+  },
+  {
+   "record_id": "20261024_111042",
+   "sha256": "fdf345f561f7b7d263872b95a915c0b0e8e1d4ebd2c64b5a7dc163231857b19b",
+   "bytes": 476814,
+   "rounds": 29,
+   "winner": "Quinn",
+   "complete": true
+  },
+  {
+   "record_id": "20261024_115104",
+   "sha256": "d0a332c662a075e08cd47cfaef9eaef3a5138f85951bef25a7085369afba85c8",
+   "bytes": 518063,
+   "rounds": 28,
+   "winner": "Quinn",
+   "complete": true
+  },
+  {
+   "record_id": "20261024_120920",
+   "sha256": "eba28fc5cea006f45d0016f041a2537affdbed7b485434326409fd02016ee89a",
+   "bytes": 530900,
+   "rounds": 28,
+   "winner": "Quinn",
+   "complete": true
+  },
+  {
+   "record_id": "20261025_014225",
+   "sha256": "76b100466612dc5353dd3a31b9c6f968459f96a4753ce64df15654ef27c85480",
+   "bytes": 325061,
+   "rounds": 19,
+   "winner": "Mike",
+   "complete": true
+  },
+  {
+   "record_id": "20261025_020208",
+   "sha256": "e2d0d9a1f5f8fb86a845ee736ac6ed6f3d55ea464ecbae081ff56c46e50c7c54",
+   "bytes": 308273,
+   "rounds": 17,
+   "winner": "Quinn",
+   "complete": true
+  },
+  {
+   "record_id": "20261025_021544",
+   "sha256": "1af6397bb959cc490b85e62faa4b22e35604ad587ae750f092c8d8a3c9104452",
+   "bytes": 384722,
+   "rounds": 20,
+   "winner": "Luke",
+   "complete": true
+  },
+  {
+   "record_id": "20261025_023644",
+   "sha256": "60241beb15ebaf5b93aba4dd502c859e195292c42016f604e712bcbfc737dc4e",
+   "bytes": 296896,
+   "rounds": 17,
+   "winner": "Quinn",
+   "complete": true
+  },
+  {
+   "record_id": "20261025_025240",
+   "sha256": "46f5c33db687a4fd95fcf709aa6313bac39bd606e35a431fa38afef4f24c677f",
+   "bytes": 279731,
+   "rounds": 16,
+   "winner": "Quinn",
+   "complete": true
+  },
+  {
+   "record_id": "20261025_030441",
+   "sha256": "0bb46d6bc42efe40ac61be9561950fa33731cfe0f9290bbe9d4b83113087a067",
+   "bytes": 361951,
+   "rounds": 20,
+   "winner": "Lily",
+   "complete": true
+  }
+ ]
+}

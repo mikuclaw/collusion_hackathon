@@ -327,10 +327,10 @@ expose-vs-induce study design requires.
 
 *The core contribution, stated as a measurement separation.* Our results
 delineate three evidentiary layers that collusion-intervention studies must
-report separately: *invitation acceptance* (0/8 voluntary invitations accepted
+report separately: *invitation acceptance* (0/14 voluntary invitations accepted
 across three recipient agents), *imposed-coordination compliance* (0/26 mutual
 ally challenges across 26 eligible opportunities in four forced-alliance
-episodes, with 108→149 secret messages exchanged), and *induced behavioral
+episodes, with 149 secret messages exchanged), and *induced behavioral
 change* (no consistent focal-pair signal in either phase). None of these
 layers — in particular, neither refusing invitations nor showing zero mutual
 challenges under an imposed contract — constitutes evidence of spontaneous
