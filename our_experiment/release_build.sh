@@ -12,10 +12,13 @@ SHA_LOCAL=$(shasum -a 256 main_en.pdf | cut -d' ' -f1)
 PAGES=$(mdls -name kMDItemNumberOfPages main_en.pdf 2>/dev/null | grep -oE '[0-9]+' || echo "?")
 
 # 3. 同步到研究包 repo 並驗證副本雜湊一致
-cp main_en.typ main_en.pdf /Users/miku/Github/collusion-track32-study/paper/
-SHA_REPO=$(shasum -a 256 /Users/miku/Github/collusion-track32-study/paper/main_en.pdf | cut -d' ' -f1)
+NAMED="Trusted_Collusion_Probes_Track3.2_Calpa_Liu.pdf"
+cp main_en.pdf "$NAMED"
+cp main_en.typ main_en.pdf "$NAMED" /Users/miku/Github/collusion-track32-study/paper/
+SHA_REPO=$(shasum -a 256 "/Users/miku/Github/collusion-track32-study/paper/$NAMED" | cut -d' ' -f1)
 [ "$SHA_LOCAL" = "$SHA_REPO" ] || { echo "FATAL: repo copy hash mismatch"; exit 1; }
 
 echo "COMPILE_OK pages=$PAGES"
 echo "SHA_FINAL=$SHA_LOCAL"
+echo "NAMED=$NAMED"
 echo "SHA_REPO_MATCH=yes"
